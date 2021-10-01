@@ -1,0 +1,48 @@
+// ***************************************
+// # FONT families
+// ***************************************
+
+$font-f-path: "../../fonts/";
+$font-f-content: "BwModelica";
+$font-f-header: $font-f-content;
+$font-f-halmar: "halmar";
+$font-f-category: "category";
+$fontIcons:();
+
+$font-config: (
+  $font-f-content: (
+    // "heavy": "BwModelica-Black",
+    // "extrabold": "BwModelica-ExtraBold",
+    "bold": "BwModelica-Bold",
+    "medium": "BwModelica-Medium",
+    //'medium': '',
+    "regular": "BwModelica-Regular",
+    //'book': 'GothamNarrow-Light',
+    "light": "BwModelica-Light",
+    // "thin": "BwModelica-Thin",
+  ),
+  $font-f-halmar: (
+    "regular": "#{$font-f-halmar}",
+  ),
+  $font-f-category: (
+    "regular": "#{$font-f-category}?v=2",
+  ),
+);
+
+$font-f-default: #{$font-f-content}, Arial, sans-serif;
+
+// ***************************************
+// # FONT weights
+// ***************************************
+
+$font-w-heavy: 900;
+$font-w-extrabold: 800;
+$font-w-bold: 700;
+$font-w-semibold: 600;
+$font-w-medium: 500;
+$font-w-regular: 400;
+$font-w-book: 300;
+$font-w-light: 200;
+$font-w-thin: 100;
+
+$font-w-default: $font-w-regular;

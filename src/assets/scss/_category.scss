@@ -1,0 +1,31 @@
+
+
+[class^="category-"], [class*=" category-"] {
+	font-family: category !important;
+	font-style: normal;
+	font-weight: normal !important;
+    font-variant: normal;
+	line-height: 1;
+    speak: none;
+    text-transform: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+$_fontIcons: (
+	category-icon_11: "\f107",
+	category-icon_12: "\f108",
+	category-icon_13: "\f109",
+	category-icon_14: "\f10a",
+	category-icon_15: "\f10b",
+	category-icon_16: "\f10c",
+	category-icon_17: "\f10d",
+);
+
+$fontIcons: map-merge($fontIcons, $_fontIcons);
+
+@each $iconClass, $iconCode in $fontIcons {
+  .#{$iconClass}::before {
+    content: $iconCode;
+  }
+}

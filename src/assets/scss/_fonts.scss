@@ -1,0 +1,6 @@
+
+@import 'halmar.scss';
+@import 'category.scss';
+
+
+@include font-face($font-config, ('woff2', 'woff', 'ttf'));

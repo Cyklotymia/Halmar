@@ -1,0 +1,53 @@
+@mixin font-face($font-map, $formats: ('woff', 'ttf'), $unicode-range: null, $path: null) {
+
+    $path: $font-f-path !default;
+
+    $font-w-map: (
+        'heavy': $font-w-heavy,
+        'extrabold': $font-w-extrabold,
+        'bold': $font-w-bold,
+        'semibold': $font-w-semibold,
+        'medium': $font-w-medium,
+        'regular': $font-w-regular,
+        'book': $font-w-book,
+        'light': $font-w-light,
+        'thin': $font-w-thin
+    );
+
+    $formats-conf: (
+        'woff2': 'woff2',
+        'woff': 'woff',
+        'ttf': 'truetype',
+				'otf': 'opentype',
+				'eot': 'embedded-opentype',
+				'svg': 'svg'
+	);
+
+    @each $font-name, $font-options in $font-map {
+        @each $font-weight, $font-file in $font-options {
+            $src: ();
+			
+			$is-cache-buster: str-index($font-file, '?');
+			$cache-buster: '';
+			
+			@if $is-cache-buster {
+				$cache-buster: str-slice($font-file, $is-cache-buster, str_length($font-file));
+				$font-file: str-slice($font-file, 0, $is-cache-buster - 1);
+			}
+
+            @each $ext in $formats {
+                $src: append($src, url(quote($path + $font-file + "." + $ext + $cache-buster)) format(quote(map-get($formats-conf, $ext))), comma);
+            }
+
+            @font-face {
+                font-family: quote($font-name);
+                font-style: normal;
+                font-weight: map-get($font-w-map, $font-weight);
+                src: $src;
+				@if $unicode-range {
+					unicode-range: unquote($unicode-range);
+				}
+            }
+        }
+    }
+}

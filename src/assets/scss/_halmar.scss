@@ -1,0 +1,59 @@
+
+@import 'variables.scss';
+
+
+[class^="halmar-"], [class*=" halmar-"] {
+	font-family: halmar !important;
+	font-style: normal;
+	font-weight: normal !important;
+    font-variant: normal;
+	line-height: 1;
+    speak: none;
+    text-transform: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+$_fontIcons: (
+	halmar-icon_01: "\f107",
+	halmar-icon_02: "\f108",
+	halmar-icon_03: "\f109",
+	halmar-icon_04: "\f10a",
+	halmar-icon_05: "\f10b",
+	halmar-icon_06: "\f10c",
+	halmar-icon_07: "\f10d",
+	halmar-icon_08: "\f10e",
+	halmar-icon_18: "\f10f",
+	halmar-icon_19: "\f110",
+	halmar-icon_23: "\f111",
+	halmar-icon_24: "\f112",
+	halmar-icon_25: "\f113",
+	halmar-icon_26: "\f114",
+	halmar-icon_27: "\f115",
+	halmar-icon_28: "\f116",
+	halmar-icon_29: "\f117",
+	halmar-icon_30: "\f118",
+	halmar-icon_31: "\f119",
+	halmar-icon_32: "\f11a",
+	halmar-icon_33: "\f11b",
+	halmar-icon_34: "\f11c",
+	halmar-icon_35: "\f11d",
+	halmar-icon_36: "\f11e",
+	halmar-icon_38: "\f11f",
+	halmar-icon_42: "\f123",
+	halmar-icon_43: "\f124",
+	halmar-icon_44: "\f125",
+	halmar-icon_45: "\f126",
+	halmar-icon_47: "\f127",
+	halmar-icon_48: "\f128",
+	halmar-icon_49: "\f129",
+	halmar-icon_50: "\f12a",
+);
+
+$fontIcons: map-merge($fontIcons, $_fontIcons);
+
+@each $iconClass, $iconCode in $fontIcons {
+  .#{$iconClass}::before {
+    content: $iconCode;
+  }
+}

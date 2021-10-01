@@ -1,11 +1,31 @@
 module.exports = {
   devServer: {
-    static: './public',
+    static: "./public",
     port: 3000,
   },
   devtool: "inline-source-map",
   module: {
     rules: [
+    //   {
+    //     test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+    //     use: [
+    //       {
+    //         loader: "file-loader",
+    //         options: {
+    //           name: "[name].[ext]",
+    //           outputPath: "fonts/",
+    //         },
+    //       },
+    //     ],
+    //   },
+      {
+        test: /\.(jpg|png|svg|gif|jpeg)$/,
+        loader: "file-loader",
+        options: {
+          name: "[name][contenthash:4].[ext]",
+          outputPath: "images",
+        },
+      },
       {
         test: /\.module.s(a|c)ss$/,
         use: [
@@ -15,7 +35,7 @@ module.exports = {
             options: {
               modules: {
                 localIdentName: "[local]",
-              }
+              },
             },
           },
           {
