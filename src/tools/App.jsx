@@ -8,6 +8,7 @@ const App=()=>{
         <>
     <header>Hello</header>
     <img src={baner} alt="" />
+    <div className="halmar-icon_01"></div>
     </>
     )
 };
