@@ -1,8 +1,9 @@
-body{
-    background-color: black;
-    color: rgb(78, 11, 201);
-    font-family: $font-f-content;
-    font-weight: $font-w-medium;
-    
-    
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul{
+    list-style: none;
 }

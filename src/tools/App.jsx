@@ -1,15 +1,25 @@
 import React from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import "../assets/scss/main.scss";
+import Header from "./Header";
+import MainSlider from "./MainSlider";
+import Test from "./Test";
 
-import'../assets/scss/main.scss';
-import baner from '../assets/images/banner_02.jpg'
 
-const App=()=>{
-    return(
-        <>
-    <header>Hello</header>
-    <img src={baner} alt="" />
-    <div className="halmar-icon_01"></div>
-    </>
-    )
+
+const App = () => {
+  return (
+    <Router>
+      <Header></Header>
+      <Switch>
+          <Route exact path="/">
+              <MainSlider/>
+          </Route>
+          <Route path="/test">
+              <Test/>
+          </Route>
+      </Switch>
+    </Router>
+  );
 };
 export default App;
