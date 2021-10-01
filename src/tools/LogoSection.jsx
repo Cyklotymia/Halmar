@@ -7,11 +7,16 @@ import logo from "../assets/images/logo.svg"
 function LogoSection() {
   return (
     <div className="logoSection">
-      <Link to="/" className="logoSection__logo-img">
-        <img src={logo} alt="" className="logoSection__logo" />
+        <div className="hamburger">
+            <span className="hamburger__element"></span>
+            <span className="hamburger__element"></span>
+            <span className="hamburger__element"></span>
+        </div>
+      <Link to="/" className="logoSection__logo-container">
+        <img src={logo} alt="logo" className="logoSection__logo" />
       </Link>
       <form className="logoSection__form">
-        <input type="text" className="logoSection__input" />
+        <input type="text" placeholder="Wpisz czego szukasz?" className="logoSection__input" />
         <button className="logoSection__button">
           <i className="logoSection__button-icon halmar-icon_01"></i>
         </button>

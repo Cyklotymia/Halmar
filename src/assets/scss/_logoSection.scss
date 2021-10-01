@@ -1,0 +1,77 @@
+.logoSection {
+  @include flexParent(row, nowrap, space-between, center);
+  padding: 10px 0;
+  .hamburger {
+    position: relative;
+    cursor: pointer;
+    height: 25px;
+    width: 25px;
+    
+    .hamburger__element {
+      position: absolute;
+      background-color: black;
+      height: 2px;
+      width: 60%;
+      left: 50%;
+      transform: translateX(-50%);
+     
+    }
+    .hamburger__element:nth-child(1) {
+      top: 30%;
+    }
+    .hamburger__element:nth-child(2) {
+      top: 50%;
+    }
+    .hamburger__element:nth-child(3) {
+      top: 70%;
+    }
+  }
+  .logoSection__logo-container {
+    @include flexParent(row, nowrap, center, center);
+
+    width: 150px;
+
+    .logoSection__logo {
+      width: 100%;
+      height: auto;
+    }
+  }
+  .logoSection__form {
+    display: none;
+    .logoSection__input {
+      .logoSection__button {
+        .logoSection__button-icon {
+        }
+      }
+    }
+  }
+
+  .logoSection__account {
+    .logoSection__element {
+      display: none;
+      color: $icons-color;
+      transition: 0.3s;
+
+      .logoSection__element-icon {
+      }
+      .logoSection__element-text {
+        font-size: 7px;
+        font-family: $font-f-default;
+        margin-top: 5px;
+        font-weight: $font-w-medium;
+      }
+    }
+    .logoSection__element:last-child {
+      @include flexParent(column, nowrap, center, center);
+    }
+    .logoSection__element:hover {
+      color: $red-color;
+    }
+  }
+}
+
+
+
+// @include for-size(xm){
+//     background-color:red
+// }
