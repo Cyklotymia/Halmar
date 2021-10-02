@@ -1,12 +1,15 @@
 .logoSection {
   @include flexParent(row, nowrap, space-between, center);
   padding: 10px 0;
+  @include for-size(s){
+    padding: 15px 0;
+  }
   .hamburger {
     position: relative;
     cursor: pointer;
     height: 25px;
     width: 25px;
-    
+
     .hamburger__element {
       position: absolute;
       background-color: black;
@@ -14,7 +17,6 @@
       width: 60%;
       left: 50%;
       transform: translateX(-50%);
-     
     }
     .hamburger__element:nth-child(1) {
       top: 30%;
@@ -25,52 +27,99 @@
     .hamburger__element:nth-child(3) {
       top: 70%;
     }
+
+    @include for-size(s) {
+      display: none;
+    }
   }
   .logoSection__logo-container {
     @include flexParent(row, nowrap, center, center);
 
-    width: 150px;
+    width: 130px;
 
     .logoSection__logo {
       width: 100%;
       height: auto;
     }
+    @include for-size(s){
+      width: 140px;
+    }
   }
   .logoSection__form {
     display: none;
+    width: 30%;
+
+    height: 35px;
     .logoSection__input {
-      .logoSection__button {
-        .logoSection__button-icon {
-        }
+      background-color: $gray-color;
+      height: 100%;
+      font-size: 13px;
+      flex-grow: 1;
+      padding: 0 13px;
+    }
+    .logoSection__button {
+      background-color: $gray-color;
+      border: none;
+      height: 100%;
+      min-width: 35px;
+      transition: .3s;
+      .logoSection__button-icon {
+        color: $icons-color;
+        transition: .3s;
+        font-size: 15px;
       }
+      
+    }
+    .logoSection__button:hover{
+      background-color: $red-darker-color;
+      .logoSection__button-icon {
+        color: white;
+      }
+    }
+    @include for-size(s) {
+      display: block;
+      @include flexParent(row,nowrap,center,center)
     }
   }
 
   .logoSection__account {
+    @include for-size(s) {
+      @include flexParent(row, nowrap, center, center);
+    }
     .logoSection__element {
       display: none;
       color: $icons-color;
       transition: 0.3s;
-
-      .logoSection__element-icon {
-      }
+      font-size: 20px;
+  
       .logoSection__element-text {
-        font-size: 7px;
-        font-family: $font-f-default;
+        font-size: 8px;
         margin-top: 5px;
         font-weight: $font-w-medium;
+      }
+      @include for-size(s) {
+        display: block;
+      }
+
+      @include for-size(s) {
+        @include flexParent(column, nowrap, center, center);
+        
+        padding: 0 15px;
+        border-right: $border-color solid 1px;
       }
     }
     .logoSection__element:last-child {
       @include flexParent(column, nowrap, center, center);
+      border: none;
+      @include for-size(s) {
+        padding-right: 0;
+      }
     }
     .logoSection__element:hover {
       color: $red-color;
     }
   }
 }
-
-
 
 // @include for-size(xm){
 //     background-color:red
