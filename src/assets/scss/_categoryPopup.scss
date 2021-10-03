@@ -1,0 +1,40 @@
+.categoryPopup{
+    position: absolute;
+    
+    top: 107px;
+    left: 0;
+    width: 100vw;
+    background-color: white;
+    .categoryPopup__container{
+        @include flexParent(row,nowrap,flex-start,center);
+        .categoryPopup__list{
+            @include flexParent(row,wrap,flex-start,flex-start);
+            max-width: 80%;
+            .categoryPopup__element{
+                .categoryPopup__icon{
+                    font-size: 10px;
+                    
+                }
+                .categoryPopup__link{
+    
+                }
+    
+            }
+        }
+        .categoryPopup__image-container{
+            display: block;
+            background-image: url('../images/blog_02.jpg');
+            background-color: sandybrown;
+           width: 100%;
+           height: 100%;
+          
+            
+            .categoryPopup__image-name{
+        
+            }
+            .categoryPopup__image-company{
+        
+            }
+        }
+    }
+}

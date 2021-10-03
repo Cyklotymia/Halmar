@@ -1,5 +1,7 @@
 .header{
     background-color: white;
+    position: fixed;
+    width: 100vw;
 }
 
 .menu{
@@ -12,3 +14,7 @@
     }
    
 }
+body{
+    height:200vh;
+}
+
