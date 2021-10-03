@@ -1,18 +1,19 @@
-import React, { useState } from "react";
+import React from "react";
+import { useDispatch,useSelector } from "react-redux";
+import { activeCategories } from "../redux/activeNav";
 import CategoryPopup from "./CategoryPopup";
 
+
 function MenuHamburger() {
-  const [isHamburgerActive, setIsHamburgerActive] = useState(false);
-  const changeAciveHandler = () => {
-    setIsHamburgerActive(!isHamburgerActive);
-  };
+  const {isActiveCategories}=useSelector(state=>state.activeNav)
+  const dispatch = useDispatch()
   return (
     <>
       <div
-        onClick={(e) => {
-          changeAciveHandler();
+        onClick={() => {
+         dispatch(activeCategories())
         }}
-        className="menu__hamburger menu__list-element"
+        className={`menu__hamburger menu__list-element menu__popup ${isActiveCategories?"active":null}`}
       >
         <div className="menu__hamburger-container">
           <span className="menu__hamburger-element"></span>
@@ -22,7 +23,7 @@ function MenuHamburger() {
         <span className="menu__list-title bold">KATEGORIE</span>
         <i className="halmar-icon_30 menu__icon"></i>
       </div>
-      {isHamburgerActive && <CategoryPopup />}
+      {isActiveCategories && <CategoryPopup  />}
     </>
   );
 }

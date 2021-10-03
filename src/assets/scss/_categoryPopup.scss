@@ -14,19 +14,33 @@
       @include flexParent(row, wrap, space-evenly, flex-start);
       min-width: 80%;
       .categoryPopup__element {
+         
         width: 30%;
         @include flexParent(row, nowrap, flex-start, center);
         margin: 10px 0;
         .categoryPopup__icon {
           color: $text-color;
           font-size: 30px;
+          transition: .3s;
         }
         .categoryPopup__link {
           color: $text-color;
           margin-left: 10px;
           text-transform: uppercase;
           font-size: 8px;
+          transition: .3s;
         }
+      }
+      .categoryPopup__element:hover{
+          
+           .categoryPopup__icon{
+            color: $red-darker-color;
+
+          }
+          .categoryPopup__link{
+          color: $red-darker-color;
+
+          }
       }
     }
     .categoryPopup__image-container {
