@@ -1,3 +1,14 @@
 .header{
     background-color: white;
 }
+
+.menu{
+    display: none;
+    border-top: $border-color 1px solid;
+    border-bottom: $border-color 1px solid;
+    background-color: white;
+    @include for-size(s){
+    display: block;
+    }
+   
+}

@@ -5,7 +5,8 @@ function MenuList() {
     return (  
         <ul className="menu__list">
             <li className="menu__list-element">
-                <span className="menu__list-title">POMIESZCZENIA</span>
+                <span className="menu__list-title bold">POMIESZCZENIA</span>
+                <i className="halmar-icon_30 menu__icon"></i>
             </li>
             <li className="menu__list-element">
              <Link className="menu__list-title" to="/new">NOWOŚCI</Link>

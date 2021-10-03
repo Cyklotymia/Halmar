@@ -7,8 +7,8 @@ function Header() {
         <header className="header">
             <div className="wrapper">
             <LogoSection/>
-            <MenuSection/>
             </div>
+            <MenuSection/>
         </header>
     );
 }

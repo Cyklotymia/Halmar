@@ -10,6 +10,7 @@ ul{
 
 html{
     font-family: $font-f-default;
+    color: $text-color;
 }
 
 .wrapper{
@@ -26,4 +27,8 @@ input{
         
       all:unset
     
+}
+
+.bold{
+    font-weight: $font-w-bold;
 }
