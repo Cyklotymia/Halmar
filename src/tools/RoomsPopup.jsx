@@ -6,7 +6,10 @@ function RoomsPopup() {
   const roomsList = rooms.map((room) => {
     return (
       <Link key={room.name} to={room.link} className="roomsPopup__element">
+          <span className="roomsPopup__text">
         {room.name}
+
+          </span>
       </Link>
     );
   });

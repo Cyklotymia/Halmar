@@ -79,7 +79,7 @@
   height: 100%;
   .menu__list-element {
     @include flexParent(row, nowrap, center, center);
-    position: relative;
+    
     flex-grow: 1;
     height: 100%;
     cursor: pointer;
