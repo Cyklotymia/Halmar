@@ -1,40 +1,68 @@
-.categoryPopup{
-    position: absolute;
-    
-    top: 107px;
-    left: 0;
-    width: 100vw;
-    background-color: white;
-    .categoryPopup__container{
-        @include flexParent(row,nowrap,flex-start,center);
-        .categoryPopup__list{
-            @include flexParent(row,wrap,flex-start,flex-start);
-            max-width: 80%;
-            .categoryPopup__element{
-                .categoryPopup__icon{
-                    font-size: 10px;
-                    
-                }
-                .categoryPopup__link{
-    
-                }
-    
-            }
+.categoryPopup {
+  position: absolute;
+  padding: 20px 0;
+  border-bottom: 1px $border-color solid;
+
+  top: 107px;
+  left: 0;
+  width: 100vw;
+  background-color: white;
+  .categoryPopup__container {
+    @include flexParent(row, nowrap, flex-start, center);
+
+    .categoryPopup__list {
+      @include flexParent(row, wrap, space-evenly, flex-start);
+      min-width: 80%;
+      .categoryPopup__element {
+        width: 30%;
+        @include flexParent(row, nowrap, flex-start, center);
+        margin: 10px 0;
+        .categoryPopup__icon {
+          color: $text-color;
+          font-size: 30px;
         }
-        .categoryPopup__image-container{
-            display: block;
-            background-image: url('../images/blog_02.jpg');
-            background-color: sandybrown;
-           width: 100%;
-           height: 100%;
-          
-            
-            .categoryPopup__image-name{
-        
-            }
-            .categoryPopup__image-company{
-        
-            }
+        .categoryPopup__link {
+          color: $text-color;
+          margin-left: 10px;
+          text-transform: uppercase;
+          font-size: 8px;
         }
+      }
     }
+    .categoryPopup__image-container {
+      display: block;
+      position: relative;
+      background-image: url("../images/blog_02.jpg");
+      background-color: sandybrown;
+      width: 100%;
+      min-height: 200px;
+
+      .categoryPopup__image-name {
+        position: absolute;
+        text-transform: uppercase;
+        bottom: 50px;
+        font-weight: $font-w-light;
+        color: white;
+        left: 15%;
+      }
+      .categoryPopup__image-company {
+        position: absolute;
+        bottom: 20px;
+        font-weight: $font-w-bold;
+        text-transform: uppercase;
+        color: white;
+        left: 17%;
+      }
+    }
+    .categoryPopup__image-container::before{
+        content: "";
+        background-color: $red-darker-color;
+        position: absolute;
+        width: 2px;
+        height: 50px;
+        bottom: 20px;
+        left: 10%;
+
+    }
+  }
 }

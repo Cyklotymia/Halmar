@@ -7,12 +7,12 @@ import categoryPopupData from "../assets/data/categoryPopupData.js";
 const CategoryPopup = () => {
   const categoryPopupList = categoryPopupData.map((data) => {
     return (
-      <li className="categoryPopup__element" key={data.name}>
+      <Link to={data.link} className="categoryPopup__element" key={data.name}>
         <i className={`${data.icon} categoryPopup__icon`}></i>
-        <Link className="categoryPopup__link" to={data.link}>
+        <span className="categoryPopup__link" >
           {data.name}
-        </Link>
-      </li>
+        </span>
+      </Link>
     );
   });
   return (
