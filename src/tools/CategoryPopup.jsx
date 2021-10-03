@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import specialOffer from "../assets/data/categoryPopupSpecialOffer.js";
 import { useDispatch,useSelector } from "react-redux";
-import { activeRooms } from "../redux/activeNav";
+import { disabledNav } from "../redux/activeNav";
 
 import categoryPopupData from "../assets/data/categoryPopupData.js";
 
@@ -14,7 +14,7 @@ const CategoryPopup = () => {
       <Link 
       onClick={()=>{
         
-       dispatch(activeRooms())
+       dispatch(disabledNav())
       }}to={data.link} className="categoryPopup__element" key={data.name}>
         <i className={`${data.icon} categoryPopup__icon`}></i>
         <span className="categoryPopup__link" >
@@ -24,7 +24,7 @@ const CategoryPopup = () => {
     );
   });
   return (
-    <div className="categoryPopup menu__popup">
+    <div className="categoryPopup ">
       <div className="wrapper">
         <div className="categoryPopup__container">
       <ul className="categoryPopup__list">{categoryPopupList}</ul>
