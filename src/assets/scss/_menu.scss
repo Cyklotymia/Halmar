@@ -47,13 +47,14 @@
 }
 
 .menu__hamburger.active {
-  border-top: 2px red solid;
+  border-top: 2px $red-darker-color solid;
   transform: translateY(-1px);
   .menu__list-title {
     color: $red-darker-color;
   }
   .menu__icon {
     color: $red-darker-color;
+    transform: rotate(180deg);
   }
   
 }
@@ -123,11 +124,17 @@
   }
 
   .menu__list-element:nth-child(1).active {
+  
     .menu__list-title {
       color: $red-darker-color;
     }
     .menu__icon {
       color: $red-darker-color;
+      transform: rotate(180deg);
     }
   }
+  .menu__list-element:nth-child(1).active::before{
+    opacity: 1;
+  }
+
 }

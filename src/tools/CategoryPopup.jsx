@@ -24,7 +24,7 @@ const CategoryPopup = () => {
     );
   });
   return (
-    <div className="categoryPopup">
+    <div className="categoryPopup menu__popup">
       <div className="wrapper">
         <div className="categoryPopup__container">
       <ul className="categoryPopup__list">{categoryPopupList}</ul>

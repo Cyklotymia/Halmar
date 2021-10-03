@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { activeRooms } from "../redux/activeNav";
+import RoomsPopup from "./RoomsPopup";
 
 function MenuList() {
   const { isActiveRooms } = useSelector((state) => state.activeNav);
@@ -17,6 +18,7 @@ function MenuList() {
       >
         <span className="menu__list-title bold">POMIESZCZENIA</span>
         <i className="halmar-icon_30 menu__icon"></i>
+        {isActiveRooms&&<RoomsPopup/>}
       </li>
       <li className="menu__list-element">
         <Link className="menu__list-title" to="/new">
