@@ -125,7 +125,9 @@
     }
   }
 
-  .menu__list-element:nth-child(1).active {
+  
+
+  .menu__list-element.active {
   
     .menu__list-title {
       color: $red-darker-color;
@@ -135,7 +137,7 @@
       transform: rotate(180deg);
     }
   }
-  .menu__list-element:nth-child(1).active::before{
+  .menu__list-element.active::before{
     opacity: 1;
   }
 
