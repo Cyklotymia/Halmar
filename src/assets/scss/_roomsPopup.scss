@@ -3,7 +3,19 @@
     position: absolute;
     top: $logoSection-height;
     left: 0;
+    border-bottom: 1px solid $border-color;
     @include flexParent(row,wrap,space-evenly,flex-start);
+    height: 260px;
+    .roomsPopup__container{
+        width: 100vw;
+        max-width: 1540px;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 10px $wrapper-padding;
+      
+        @include flexParent(row,wrap,space-evenly,flex-start);
     .roomsPopup__element{
         position: relative;
         background-color: rgb(125, 182, 163);
@@ -29,5 +41,5 @@
             left: 0;
             top:0;
         }
-    }
+    }}
 }

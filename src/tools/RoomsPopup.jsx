@@ -14,7 +14,8 @@ function RoomsPopup() {
     );
   });
 
-  return <ul className="roomsPopup menu__popup">{roomsList}</ul>;
+  return <ul className="roomsPopup menu__popup">
+    <div className="roomsPopup__container">{roomsList}</div></ul>;
 }
 
 export default RoomsPopup;

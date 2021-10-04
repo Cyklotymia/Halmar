@@ -6,6 +6,10 @@ const hamburgerList = [
     { name: "Inspiracje", link: "/inspiracje"},
     { name: "Blog", link: "/blog"},
     { name: "Kontakt", link: "/kontakt"},
+    { name: "test", link: "/kontakt"},
+    { name: "test1", link: "/kontakt"},
+    { name: "test2", link: "/kontakt"},
+    { name: "test3", link: "/kontakt"},
     { name: "Katalog",iconBefore:"halmar-icon_02" },
     { name: "Schowek", link: "/schowek",iconBefore:"halmar-icon_03"},
   ];

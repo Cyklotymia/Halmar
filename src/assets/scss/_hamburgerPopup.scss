@@ -1,0 +1,73 @@
+.hamburgerPopup {
+  display: block;
+  position: absolute;
+  top: $logoSection-height-s;
+  width: 85vw;
+  left: 0;
+  height: calc(100vh - 55px);
+  border-right: solid 1px $border-color;
+    @include for-size(s){
+        display: none
+    }
+  .hamburgerPopup__form {
+    @include flexParent(row, nowrap, flex-start, flex-start);
+    background-color: $gray-color;
+    border-bottom: solid 1px $border-color;
+    height: 55px;
+
+    .hamburgerPopup__input {
+      background-color: $gray-color;
+      height: 100%;
+      width: 100%;
+      padding: 0 30px;
+      font-size: 12px;
+    }
+    .hamburgerPopup__button {
+      @include flexParent(row, nowrap, center, center);
+      height: 100%;
+      min-width: 40px;
+      border: none;
+      cursor: pointer;
+      .hamburgerPopup__button-icon {
+        font-size: 15px;
+      }
+    }
+  }
+  .hamburgerPopup__list {
+    overflow-y: scroll;
+    height: calc(100% - 55px);
+    .hamburgerPopup__element {
+      @include flexParent(row, nowrap, center, center);
+      border-bottom: solid 1px $border-color;
+      height: 55px;
+      .hamburgerPopup__link {
+        font-size: 14px;
+        display: block;
+        @include flexParent(row, nowrap, flex-start, center);
+
+        padding: 5px $wrapper-padding;
+        color: $text-color;
+        width: 100%;
+        height: 100%;
+        .hamburgerPopup__icon--b {
+          margin-right: 10px;
+        }
+        // .hamburgerPopup__text {
+        // }
+        .hamburgerPopup__icon--a {
+          @include flexParent(row, nowrap, center, center);
+          margin: 0 0 0 auto;
+          transform: rotate(-90deg);
+          font-size: 10px;
+          padding-top: 10px;
+          border-top: solid 1px $border-color;
+          min-width: 30px;
+          min-height: 30px;
+        }
+      }
+    }
+  }
+}
+// .hamburgerPopup.active{
+//     display: block;
+// }

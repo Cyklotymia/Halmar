@@ -9,6 +9,7 @@ function MenuList() {
   const dispatch = useDispatch();
   return (
     <ul className="menu__list">
+      {isActiveRooms&&<RoomsPopup/>}
       <li
         className={`menu__list-element menu__popup
             ${isActiveRooms ? "active" : null}`}
@@ -18,7 +19,7 @@ function MenuList() {
       >
         <span className="menu__list-title bold">POMIESZCZENIA</span>
         <i className="halmar-icon_30 menu__icon"></i>
-        {isActiveRooms&&<RoomsPopup/>}
+        {/* {isActiveRooms&&<RoomsPopup/>} */}
       </li>
       <li className="menu__list-element">
         <Link className="menu__list-title" to="/new">

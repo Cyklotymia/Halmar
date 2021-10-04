@@ -12,7 +12,7 @@ function HamburgerPopup({ isActive }) {
   const hamburgerCat = hamburgerList.map((hambElement) => {
     return (
       <li key={hambElement.name} className="hamburgerPopup__element">
-        <Link to={hambElement.link ?? "#"}>
+        <Link className="hamburgerPopup__link"to={hambElement.link ?? "#"}>
           {hambElement.iconBefore && (
             <i
               className={`hamburgerPopup__icon--b ${hambElement.iconBefore}`}

@@ -1,6 +1,7 @@
 .logoSection {
   @include flexParent(row, nowrap, space-between, center);
   padding: 10px 0;
+ 
   @include for-size(s){
     padding: 15px 0;
   }

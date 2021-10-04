@@ -16,8 +16,9 @@ html{
 .wrapper{
     max-width: 1540px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 $wrapper-padding;
     min-width: 320px;
+    
 }
 a{
     text-decoration: none;
