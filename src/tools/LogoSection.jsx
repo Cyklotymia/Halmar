@@ -2,9 +2,11 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import LogoSectionRouter from "./LogoSectionRouter";
 import logo from "../assets/images/logo.svg";
+import HamburgerPopup from "./HamburgerPopup";
 
 function LogoSection() {
   const [searchingValue, setSearchingValue] = useState("");
+  const [isActiveHamb,setIsActiveHamb]= useState(false)
 
   const handleSearchingPhase = (e) => {
     e.preventDefault();
@@ -14,11 +16,13 @@ function LogoSection() {
   
   return (
     <div className="logoSection">
-      <div className="hamburger">
+      <div onClick={()=>{setIsActiveHamb(!isActiveHamb)}}
+      className={`hamburger ${isActiveHamb?"active":null}`}>
         <span className="hamburger__element"></span>
         <span className="hamburger__element"></span>
         <span className="hamburger__element"></span>
       </div>
+      <HamburgerPopup isActive={isActiveHamb}/>
       <Link to="/" className="logoSection__logo-container">
         <img src={logo} alt="logo" className="logoSection__logo" />
       </Link>
