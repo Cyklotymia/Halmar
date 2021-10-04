@@ -1,45 +1,45 @@
-.roomsPopup{
+.roomsPopup {
+  width: 100vw;
+  position: absolute;
+  top: $logoSection-height;
+  left: 0;
+  border-bottom: 1px solid $border-color;
+  @include flexParent(row, wrap, space-evenly, flex-start);
+  height: 260px;
+  .roomsPopup__container {
     width: 100vw;
+    max-width: 1540px;
     position: absolute;
-    top: $logoSection-height;
-    left: 0;
-    border-bottom: 1px solid $border-color;
-    @include flexParent(row,wrap,space-evenly,flex-start);
-    height: 260px;
-    .roomsPopup__container{
-        width: 100vw;
-        max-width: 1540px;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px $wrapper-padding;
+
+    @include flexParent(row, wrap, space-evenly, flex-start);
+    .roomsPopup__element {
+      position: relative;
+      background-color: rgb(125, 182, 163);
+      width: 21%;
+      margin: 10px 0;
+      height: 100px;
+      .roomsPopup__text {
+        padding-left: 10px;
         position: absolute;
+        color: white;
+        text-transform: uppercase;
+        font-size: 10px;
+        bottom: 10%;
+        left: 5%;
+      }
+      .roomsPopup__text::before {
+        position: absolute;
+        content: "";
+        background-color: $red-darker-color;
+        height: 100%;
+        width: 2px;
+        left: 0;
         top: 0;
-        left: 50%;
-        transform: translateX(-50%);
-        padding: 10px $wrapper-padding;
-      
-        @include flexParent(row,wrap,space-evenly,flex-start);
-    .roomsPopup__element{
-        position: relative;
-        background-color: rgb(125, 182, 163);
-        width: 21%;
-        margin: 10px 0;
-        height: 100px;
-        .roomsPopup__text{
-            padding-left: 10px;
-            position: absolute;
-            color: white;
-            text-transform: uppercase;
-            font-size: 12px;
-            bottom: 10%;
-            left: 5%;
-            
-        }
-        .roomsPopup__text::before{
-            position: absolute;
-            content: "";
-            background-color: $red-darker-color;
-            height: 100%;
-            width: 2px;
-            left: 0;
-            top:0;
-        }
-    }}
+      }
+    }
+  }
 }

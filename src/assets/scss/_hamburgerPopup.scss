@@ -1,11 +1,12 @@
 .hamburgerPopup {
-  display: block;
+ 
   position: absolute;
   top: $logoSection-height-s;
   width: 85vw;
-  left: 0;
+  left: -100%;
   height: calc(100vh - 55px);
   border-right: solid 1px $border-color;
+  transition: 0.5s;
     @include for-size(s){
         display: none
     }
@@ -68,6 +69,9 @@
     }
   }
 }
-// .hamburgerPopup.active{
-//     display: block;
-// }
+.hamburgerPopup.active{
+    left: 0;
+    @include for-size(s){
+        display: none;
+    }
+}
