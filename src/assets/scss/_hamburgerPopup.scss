@@ -1,6 +1,5 @@
 
 
-
 .hamburgerPopup {
  
   position: absolute;
@@ -79,7 +78,7 @@
     }
 }
 
-.hamburgerPopup__lvl1{
+.hamburgerPopup__lvl1--Kategorie,.hamburgerPopup__lvl1--Pomieszczenia{
     position: absolute;
     background-color: white;
     z-index: 2;
@@ -105,6 +104,6 @@
         }
     }
 }
-.hamburgerPopup__lvl1.active{
+.hamburgerPopup__lvl1--Kategorie.active-k,.hamburgerPopup__lvl1--Pomieszczenia.active-p{
     left: 0;
 }

@@ -3,6 +3,7 @@ import hamburgerList from "../assets/data/hamburgerList";
 import { Link } from "react-router-dom";
 import NextLvlPopup from "./NextLvlPopup";
 import { useDispatch, useSelector } from "react-redux";
+import { activeCategories, activeHamburger, activeRooms } from "../redux/activeHamburger";
 
 
 function HamburgerPopup( ) {
@@ -23,7 +24,18 @@ function HamburgerPopup( ) {
       <li key={hambElement.name} className="hamburgerPopup__element">
         <Link
           onClick={() => {
-           console.log('klik w cos');
+           
+           if (hambElement.iconAfter && hambElement.name==="Kategorie") {
+            dispatch(activeCategories(true))
+            dispatch(activeRooms(false))
+           
+           }else if (hambElement.iconAfter && hambElement.name==="Pomieszczenia") {
+            dispatch(activeCategories(false))
+            dispatch(activeRooms(true))
+         
+           }else{
+            dispatch(activeHamburger(false))
+           }
           }}
           className="hamburgerPopup__link"
           to={hambElement.link ?? "#"}
@@ -44,9 +56,10 @@ function HamburgerPopup( ) {
     );
   });
   return (
-    <div className={`hamburgerPopup`}>
+    <div className={`hamburgerPopup ${isActiveHamburger?"active":null}`}>
       <form
         onSubmit={(e) => {
+          dispatch(activeHamburger(false))
           handleSearchingPhase(e);
         
         }}
@@ -65,7 +78,11 @@ function HamburgerPopup( ) {
           <i className="hamburgerPopup__button-icon halmar-icon_01"></i>
         </button>
       </form>
-      <ul className="hamburgerPopup__list">{<NextLvlPopup />}</ul>
+      <ul className="hamburgerPopup__list">
+        <NextLvlPopup name="Kategorie"/>
+        <NextLvlPopup name="Pomieszczenia" />
+        {hamburgerCat}
+        </ul>
     </div>
   );
 }
