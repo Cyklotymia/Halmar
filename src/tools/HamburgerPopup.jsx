@@ -6,6 +6,8 @@ import NextLvlPopup from "./NextLvlPopup";
 function HamburgerPopup({ isActive, isActiveFunction }) {
   const [searchingValue, setSearchingValue] = useState("");
   const [generatePopup, setGeneratePopup] = useState("");
+  const [categoryActive, setCategoryActive] = useState(false)
+  const [roomsActive, setRoomsActive] = useState(false)
   
   
 
@@ -20,8 +22,10 @@ function HamburgerPopup({ isActive, isActiveFunction }) {
           onClick={() => {
             if (!hambElement.iconAfter) {
               isActiveFunction((state) => !state);
+
             } else {
               setGeneratePopup(hambElement.name)
+              setCategoryActive(true)
             }
           }}
           className="hamburgerPopup__link"
@@ -64,7 +68,7 @@ function HamburgerPopup({ isActive, isActiveFunction }) {
           <i className="hamburgerPopup__button-icon halmar-icon_01"></i>
         </button>
       </form>
-      <ul className="hamburgerPopup__list">{generatePopup&&<NextLvlPopup isActiveFunction={isActiveFunction} name={generatePopup}/>}{hamburgerCat}</ul>
+      <ul className="hamburgerPopup__list">{generatePopup&&<NextLvlPopup isActiveFunction={isActiveFunction} name={generatePopup} categoryActive={categoryActive} setCategoryActive={setCategoryActive}/>}{hamburgerCat}</ul>
     </div>
   );
 }

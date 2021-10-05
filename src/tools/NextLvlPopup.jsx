@@ -1,10 +1,12 @@
-import React from "react";
+import React ,{useState}from "react";
 import categoryPopupData from "../assets/data/categoryPopupData.js";
 import { Link } from "react-router-dom";
 
-function NextLvlPopup({ name,isActiveFunction }) {
+function NextLvlPopup({ name,isActiveFunction,categoryActive, setCategoryActive}) {
   let categoryList;
+
   if (name === "Kategorie") {
+    
     categoryList = categoryPopupData.map((hambElement) => {
       return(
       <li key={hambElement.name} className="hamburgerPopup__element">
@@ -27,10 +29,12 @@ function NextLvlPopup({ name,isActiveFunction }) {
     })
   }
   return (
-    <div className="hamburgerPopup__lvl1">
+    <div className={`hamburgerPopup__lvl1 ${categoryActive?"active":null}`}>
       <div className="hamburgerPopup__nav">
         <span onClick={()=>{
-            console.log('chowa lvl1');
+            if (name==="Kategorie") {
+                setCategoryActive(false)
+            }
         }} className="hamburgerPopup__back">Powrót</span>
         <span className="hamburgerPopup__cat">{name}</span>
       </div>
