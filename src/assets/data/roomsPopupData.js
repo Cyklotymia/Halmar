@@ -6,7 +6,7 @@ const rooms = [
     { name: "przedpokój", link: "/przedpokój"},
     { name: "salon", link: "/salon"},
     { name: "sypialnia", link: "/sypialnia"},
-    { name: "biuro", link: "/biuro"},
+    { name: "costam", link: "/costam"},
   ];
   
   export default rooms;

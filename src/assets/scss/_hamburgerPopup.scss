@@ -79,12 +79,13 @@
 }
 
 .hamburgerPopup__lvl1--Kategorie,.hamburgerPopup__lvl1--Pomieszczenia{
+  height: calc(100vh - 105px);
     position: absolute;
     background-color: white;
     z-index: 2;
     width: 85vw;
-    left: -100%;
-    transition: .3s;
+    left: -300%;
+    transition: .5s;
     .hamburgerPopup__nav{
         background-color: $gray-color;
         @include flexParent(row,nowrap,flex-start,center);
