@@ -1,9 +1,13 @@
 import React, { useState } from "react";
 import hamburgerList from "../assets/data/hamburgerList";
 import { Link } from "react-router-dom";
+import NextLvlPopup from "./NextLvlPopup";
 
-function HamburgerPopup({ isActive }) {
+function HamburgerPopup({ isActive, isActiveFunction }) {
   const [searchingValue, setSearchingValue] = useState("");
+  const [generatePopup, setGeneratePopup] = useState("");
+  
+  
 
   const handleSearchingPhase = (e) => {
     e.preventDefault();
@@ -12,7 +16,17 @@ function HamburgerPopup({ isActive }) {
   const hamburgerCat = hamburgerList.map((hambElement) => {
     return (
       <li key={hambElement.name} className="hamburgerPopup__element">
-        <Link className="hamburgerPopup__link"to={hambElement.link ?? "#"}>
+        <Link
+          onClick={() => {
+            if (!hambElement.iconAfter) {
+              isActiveFunction((state) => !state);
+            } else {
+              setGeneratePopup(hambElement.name)
+            }
+          }}
+          className="hamburgerPopup__link"
+          to={hambElement.link ?? "#"}
+        >
           {hambElement.iconBefore && (
             <i
               className={`hamburgerPopup__icon--b ${hambElement.iconBefore}`}
@@ -33,6 +47,7 @@ function HamburgerPopup({ isActive }) {
       <form
         onSubmit={(e) => {
           handleSearchingPhase(e);
+          isActiveFunction((state) => !state);
         }}
         className="hamburgerPopup__form"
       >
@@ -49,7 +64,7 @@ function HamburgerPopup({ isActive }) {
           <i className="hamburgerPopup__button-icon halmar-icon_01"></i>
         </button>
       </form>
-      <ul className="hamburgerPopup__list">{hamburgerCat}</ul>
+      <ul className="hamburgerPopup__list">{generatePopup&&<NextLvlPopup isActiveFunction={isActiveFunction} name={generatePopup}/>}{hamburgerCat}</ul>
     </div>
   );
 }

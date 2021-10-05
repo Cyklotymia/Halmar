@@ -22,7 +22,7 @@ function LogoSection() {
         <span className="hamburger__element"></span>
         <span className="hamburger__element"></span>
       </div>
-      <HamburgerPopup isActive={isActiveHamb}/>
+      <HamburgerPopup isActiveFunction={setIsActiveHamb} isActive={isActiveHamb}/>
       <Link to="/" className="logoSection__logo-container">
         <img src={logo} alt="logo" className="logoSection__logo" />
       </Link>
