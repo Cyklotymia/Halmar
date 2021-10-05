@@ -56,7 +56,7 @@ function HamburgerPopup( ) {
     );
   });
   return (
-    <div className={`hamburgerPopup ${isActiveHamburger?"active":null}`}>
+    <div className={`hamburgerPopup ${isActiveHamburger?"active":"unActive"}`}>
       <form
         onSubmit={(e) => {
           dispatch(activeHamburger(false))

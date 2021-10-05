@@ -12,7 +12,7 @@ function MenuList() {
       {isActiveRooms&&<RoomsPopup/>}
       <li
         className={`menu__list-element menu__popup
-            ${isActiveRooms ? "active" : null}`}
+            ${isActiveRooms ? "active" : "unActive"}`}
         onClick={() => {
           dispatch(activeRooms());
         }}

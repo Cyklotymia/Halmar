@@ -22,7 +22,7 @@ function LogoSection() {
         onClick={() => {
           dispatch(activeHamburger("toggle"));
         }}
-        className={`hamburger ${isActiveHamburger ? "active" : null}`}
+        className={`hamburger ${isActiveHamburger ? "active" : "unActive"}`}
       >
         <span className="hamburger__element"></span>
         <span className="hamburger__element"></span>

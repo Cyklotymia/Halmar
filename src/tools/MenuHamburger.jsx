@@ -13,7 +13,7 @@ function MenuHamburger() {
         onClick={() => {
          dispatch(activeCategories())
         }}
-        className={`menu__hamburger menu__list-element menu__popup ${isActiveCategories?"active":null}`}
+        className={`menu__hamburger menu__list-element menu__popup ${isActiveCategories?"active":"unActive"}`}
       >
         <div className="menu__hamburger-container">
           <span className="menu__hamburger-element"></span>
