@@ -2,12 +2,15 @@ import React, { useState } from "react";
 import hamburgerList from "../assets/data/hamburgerList";
 import { Link } from "react-router-dom";
 import NextLvlPopup from "./NextLvlPopup";
+import { useDispatch, useSelector } from "react-redux";
 
-function HamburgerPopup({ isActive, isActiveFunction }) {
+
+function HamburgerPopup( ) {
   const [searchingValue, setSearchingValue] = useState("");
-  const [generatePopup, setGeneratePopup] = useState("");
-  const [categoryActive, setCategoryActive] = useState(false)
-  const [roomsActive, setRoomsActive] = useState(false)
+  const dispatch = useDispatch();
+  const {isActiveHamburger,isActiveCategories,isActiveRooms} = useSelector((state) => state.activeHamburger);
+ 
+
   
   
 
@@ -20,13 +23,7 @@ function HamburgerPopup({ isActive, isActiveFunction }) {
       <li key={hambElement.name} className="hamburgerPopup__element">
         <Link
           onClick={() => {
-            if (!hambElement.iconAfter) {
-              isActiveFunction((state) => !state);
-
-            } else {
-              setGeneratePopup(hambElement.name)
-              setCategoryActive(true)
-            }
+           console.log('klik w cos');
           }}
           className="hamburgerPopup__link"
           to={hambElement.link ?? "#"}
@@ -47,11 +44,11 @@ function HamburgerPopup({ isActive, isActiveFunction }) {
     );
   });
   return (
-    <div className={`hamburgerPopup ${isActive ? "active" : null}`}>
+    <div className={`hamburgerPopup`}>
       <form
         onSubmit={(e) => {
           handleSearchingPhase(e);
-          isActiveFunction((state) => !state);
+        
         }}
         className="hamburgerPopup__form"
       >
@@ -68,7 +65,7 @@ function HamburgerPopup({ isActive, isActiveFunction }) {
           <i className="hamburgerPopup__button-icon halmar-icon_01"></i>
         </button>
       </form>
-      <ul className="hamburgerPopup__list">{generatePopup&&<NextLvlPopup isActiveFunction={isActiveFunction} name={generatePopup} categoryActive={categoryActive} setCategoryActive={setCategoryActive}/>}{hamburgerCat}</ul>
+      <ul className="hamburgerPopup__list">{<NextLvlPopup />}</ul>
     </div>
   );
 }

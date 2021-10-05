@@ -3,26 +3,32 @@ import { Link } from "react-router-dom";
 import LogoSectionRouter from "./LogoSectionRouter";
 import logo from "../assets/images/logo.svg";
 import HamburgerPopup from "./HamburgerPopup";
+import { useDispatch, useSelector } from "react-redux";
+import { activeHamburger } from "../redux/activeHamburger";
 
 function LogoSection() {
   const [searchingValue, setSearchingValue] = useState("");
-  const [isActiveHamb,setIsActiveHamb]= useState(false)
+  const dispatch = useDispatch();
+  const { isActiveHamburger } = useSelector((state) => state.activeHamburger);
 
   const handleSearchingPhase = (e) => {
     e.preventDefault();
-    setSearchingValue("")
+    setSearchingValue("");
   };
-  
-  
+
   return (
     <div className="logoSection">
-      <div onClick={()=>{setIsActiveHamb(!isActiveHamb)}}
-      className={`hamburger ${isActiveHamb?"active":null}`}>
+      <div
+        onClick={() => {
+          dispatch(activeHamburger("toggle"));
+        }}
+        className={`hamburger ${isActiveHamburger ? "active" : null}`}
+      >
         <span className="hamburger__element"></span>
         <span className="hamburger__element"></span>
         <span className="hamburger__element"></span>
       </div>
-      <HamburgerPopup isActiveFunction={setIsActiveHamb} isActive={isActiveHamb}/>
+      <HamburgerPopup />
       <Link to="/" className="logoSection__logo-container">
         <img src={logo} alt="logo" className="logoSection__logo" />
       </Link>
