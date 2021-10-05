@@ -1,3 +1,6 @@
+
+
+
 .hamburgerPopup {
  
   position: absolute;
@@ -73,5 +76,30 @@
     left: 0;
     @include for-size(s){
         display: none;
+    }
+}
+
+.hamburgerPopup__lvl1{
+    position: absolute;
+    background-color: white;
+    z-index: 2;
+    width: 85vw;
+    .hamburgerPopup__nav{
+        background-color: $gray-color;
+        @include flexParent(row,nowrap,flex-start,center);
+        height: 50px;
+        width: 100%;
+        padding-left: $wrapper-padding;
+        .hamburgerPopup__back{
+            @include flexParent(row,nowrap,flex-start,center);
+            width: 30%;
+            height: 100%;
+            padding-right: 10px;
+            border-right: 1px $border-color solid;
+            cursor: pointer;
+        }
+        .hamburgerPopup__cat{
+            padding-left: $wrapper-padding;
+        }
     }
 }
