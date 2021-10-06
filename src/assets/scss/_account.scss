@@ -41,7 +41,7 @@
 
         width: 70%;
         @include flexParent(row,nowrap,flex-end,center);
-        margin: 40px 0 0 auto;
+        margin: 30px 0 0 auto;
         
         .logIn__link {
           color: $text-color;
