@@ -1,3 +1,65 @@
-.logIn{
-    padding-top: $logoSection-height-s;
+.logIn {
+  width: 80vw;
+  margin: 0 auto;
+  padding: 20px 0;
+  .logIn__header {
+    height: 30px;
+    text-transform: uppercase;
+    @include flexParent(row, nowrap, flex-start, center);
+    font-size: 23px;
+    margin-bottom: 25px;
+  }
+  .logIn__header::before {
+    background-color: $red-color;
+    content: "";
+    display: block;
+    margin-right: 20px;
+    height: 100%;
+    width: 2px;
+  }
+  .logIn__form {
+    background-color: white;
+    padding: 20px;
+
+    .logIn__form-element {
+      @include flexParent(column, nowrap, flex-start, flex-start);
+      margin-bottom: 20px;
+      max-width: 100%;
+      .logIn__label {
+          margin-bottom: 5px;
+      }
+      .logIn__input {
+        border: 1px solid $border-color;
+        padding: 10px;
+        width: 95%;
+        font-size: 13px;
+        height: 20px;
+      }
+    }
+
+    .logIn__form-element--right {
+
+        width: 70%;
+        @include flexParent(row,nowrap,flex-end,center);
+        margin: 40px 0 0 auto;
+        
+        .logIn__link {
+          color: $text-color;
+          text-decoration: underline;
+          font-size: 15px;
+
+      }
+      .logIn__link:hover{
+          text-decoration: none;
+      }
+      .logIn__link:nth-child(1){
+          margin-right: 10px;
+      }
+    }
+    .logIn__button {
+       
+        display: flex;
+        margin:  30px 0 0 auto;
+    }
+  }
 }

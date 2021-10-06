@@ -1,0 +1,16 @@
+.helmar__button{
+    font-family: $font-f-default;
+    background-color: $red-color;
+    color: white;
+    text-transform: uppercase;
+    padding:15px 30px ;
+    border: none;
+    font-weight: $font-w-bold;
+    font-size: 11px;
+    cursor: pointer;
+    transition: .3s;
+   
+}
+.helmar__button:hover{
+    background-color: $red-darker-color;
+}

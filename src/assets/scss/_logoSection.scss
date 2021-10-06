@@ -54,7 +54,7 @@
   .logoSection__logo-container {
     @include flexParent(row, nowrap, center, center);
 
-    width: 130px;
+    width: 170px;
 
     .logoSection__logo {
       width: 100%;
@@ -102,6 +102,7 @@
   }
 
   .logoSection__account {
+    margin-right: 10px;
     @include for-size(s) {
       @include flexParent(row, nowrap, center, center);
     }
