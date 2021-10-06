@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import categoryPopupData from "../assets/data/categoryPopupData.js";
 import roomsPopupData from "../assets/data/roomsPopupData.js";
 import { Link } from "react-router-dom";
@@ -30,7 +30,6 @@ function NextLvlPopup({ name }) {
           <Link
             onClick={() => {
               dispatch(activeHamburger(false));
-              console.log("object");
             }}
             className="hamburgerPopup__link"
             to={hambElement.link ?? "#"}
@@ -44,8 +43,8 @@ function NextLvlPopup({ name }) {
   return (
     <div
       className={`hamburgerPopup__lvl1--${name} ${
-        name === "Kategorie" && isActiveCategories ? "active-k" : "unActive"
-      } ${name === "Pomieszczenia" && isActiveRooms ? "active-p" : "unActive"}`}
+        name === "Kategorie" && isActiveCategories ? "active" : "unActive"
+      } ${name === "Pomieszczenia" && isActiveRooms ? "active" : "unActive"}`}
     >
       <div className="hamburgerPopup__nav">
         <span

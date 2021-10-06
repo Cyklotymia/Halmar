@@ -19,7 +19,6 @@ function MenuList() {
       >
         <span className="menu__list-title bold">POMIESZCZENIA</span>
         <i className="halmar-icon_30 menu__icon"></i>
-        {/* {isActiveRooms&&<RoomsPopup/>} */}
       </li>
       <li className="menu__list-element">
         <Link className="menu__list-title" to="/new">

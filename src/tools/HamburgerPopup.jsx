@@ -9,7 +9,7 @@ import { activeCategories, activeHamburger, activeRooms } from "../redux/activeH
 function HamburgerPopup( ) {
   const [searchingValue, setSearchingValue] = useState("");
   const dispatch = useDispatch();
-  const {isActiveHamburger,isActiveCategories,isActiveRooms} = useSelector((state) => state.activeHamburger);
+  const {isActiveHamburger} = useSelector((state) => state.activeHamburger);
  
 
   
