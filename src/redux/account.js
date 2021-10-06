@@ -13,8 +13,10 @@ export const accountSlice = createSlice({
      if (loginObj.payload.login === "login" && loginObj.payload.pass === "haslo") {
          state.isUserLogged=true
          state.warningLogged=false
+         console.log('zalogowany');
      }else{
         state.warningLogged=true
+        console.log('niezalogowany');
      }
     },
    
