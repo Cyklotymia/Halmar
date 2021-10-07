@@ -6,6 +6,12 @@
   @include for-size(s){
     padding: 15px 0;
   }
+  @include for-size(m){
+    height: 80px;
+  }
+  @include for-size(xl){
+    height: 111px;
+  }
   .hamburger {
     position: relative;
     cursor: pointer;
@@ -145,7 +151,11 @@
       }
       @include for-size(l){
         font-size:30px;
-        padding:  0 20px;
+        padding:  0 25px;
+      }
+      @include for-size(l){
+       
+        padding:  0 30px;
       }
      
   

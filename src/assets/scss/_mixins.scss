@@ -99,4 +99,9 @@
       @content;
     }
   }
+  @else if $size == xxl {
+    @media (min-width: 1650px) {
+      @content;
+    }
+  }
 }

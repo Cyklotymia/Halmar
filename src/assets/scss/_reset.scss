@@ -18,6 +18,9 @@ html{
     margin: 0 auto;
     padding: 0 $wrapper-padding;
     min-width: 320px;
+    @include for-size(xxl){
+        padding: 0;
+    }
     
 }
 a{
