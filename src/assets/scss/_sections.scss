@@ -17,6 +17,15 @@
 .main{
     background-color: $gray-color;
     padding-top: $logoSection-height-s;
+    @include for-size(s){
+        padding-top: $logoSection-height;
+      }
+    @include for-size(xm){
+        padding-top: 130px;
+      }
+      @include for-size(m){
+        padding-top: 145px;
+      }
 }
 body{
     height:200vh;

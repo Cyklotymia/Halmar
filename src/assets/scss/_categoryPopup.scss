@@ -6,6 +6,10 @@
   left: 0;
   width: 100vw;
   background-color: white;
+  @include for-size(m){
+    top: 145px;
+  }
+  
   .categoryPopup__container {
     @include flexParent(row, nowrap, flex-start, center);
 
@@ -21,6 +25,9 @@
           color: $text-color;
           font-size: 30px;
           transition: .3s;
+          @include for-size(m){
+            font-size: 35px;
+          }
         }
         .categoryPopup__link {
           color: $text-color;
@@ -28,6 +35,12 @@
           text-transform: uppercase;
           font-size: 8px;
           transition: .3s;
+          @include for-size(m){
+            font-size: 12px;
+          }
+        }
+        @include for-size(l){
+          margin-left: 15px;
         }
       }
       .categoryPopup__element:hover{

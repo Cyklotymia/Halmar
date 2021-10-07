@@ -74,10 +74,13 @@ function Account() {
               <Link to="/remindPass" className="logIn__link">
                 Przypomnij hasło
               </Link>
-            </div>
+              <div className="logIn__form-button--container">
+
             <button className="helmar__button logIn__button">
               Zaloguj się
             </button>
+              </div>
+            </div>
           </form>
         </div>
       )}

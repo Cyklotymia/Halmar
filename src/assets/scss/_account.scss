@@ -1,5 +1,5 @@
 .logIn {
-  width: 80vw;
+  width: 60vw;
   margin: 0 auto;
   padding: 20px 0;
   .logIn__header {
@@ -7,7 +7,12 @@
     text-transform: uppercase;
     @include flexParent(row, nowrap, flex-start, center);
     font-size: 23px;
-    margin-bottom: 25px;
+
+    max-width: 800px;
+    margin: 0 auto 25px auto;
+    @include for-size(m) {
+      font-size: 30px;
+    }
   }
   .logIn__header::before {
     background-color: $red-color;
@@ -20,46 +25,65 @@
   .logIn__form {
     background-color: white;
     padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
 
     .logIn__form-element {
       @include flexParent(column, nowrap, flex-start, flex-start);
-      margin-bottom: 20px;
-      max-width: 100%;
+
+      max-width: 400px;
+      margin: 20px auto;
+      @include for-size(m) {
+        @include flexParent(row, nowrap, flex-start, center);
+      }
       .logIn__label {
-          margin-bottom: 5px;
+        margin-bottom: 5px;
+        @include for-size(m) {
+          margin-right: 30px;
+          font-size: 18px;
+        }
       }
       .logIn__input {
         border: 1px solid $border-color;
         padding: 10px;
-        width: 95%;
+        width: 90%;
         font-size: 13px;
         height: 20px;
+        @include for-size(m) {
+          font-size: 15px;
+          height: 35px;
+        }
       }
     }
 
     .logIn__form-element--right {
+      max-width: 400px;
+      @include flexParent(row, wrap, flex-end, center);
+      margin: 30px auto 0 auto;
+      @include for-size(m) {
+        @include flexParent(row, wrap, flex-end, center);
+      }
 
-        width: 70%;
-        @include flexParent(row,nowrap,flex-end,center);
-        margin: 30px 0 0 auto;
-        
-        .logIn__link {
-          color: $text-color;
-          text-decoration: underline;
-          font-size: 15px;
-
+      .logIn__link {
+        color: $text-color;
+        text-decoration: underline;
+        font-size: 15px;
       }
-      .logIn__link:hover{
-          text-decoration: none;
+      .logIn__form-button--container {
+        max-width: 400px;
+        width: 100%;
+        margin: 30px 0 0 0;
+        .logIn__button {
+          display: flex;
+          margin: 0 0 0 auto;
+        }
       }
-      .logIn__link:nth-child(1){
-          margin-right: 10px;
+      .logIn__link:hover {
+        text-decoration: none;
       }
-    }
-    .logIn__button {
-       
-        display: flex;
-        margin:  30px 0 0 auto;
+      .logIn__link:nth-child(1) {
+        margin-right: 10px;
+      }
     }
   }
 }
