@@ -111,6 +111,9 @@
     left: 0;
     transition: 0.3s;
   }
+  .menu__list-element:last-child::after{
+    display: none;
+  }
   .menu__list-element:hover::before {
     opacity: 1;
   }

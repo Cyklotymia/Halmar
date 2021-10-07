@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { userLogged } from "../redux/account";
-import { Link } from "react-router-dom";
 import AccountLogged from "./AccountLogged";
+import { Link } from "react-router-dom";
 
 // onClick={()=>{
 //     dispatch(userLogged({login:"login",pass:"haslo"}))
@@ -62,7 +62,7 @@ function Account() {
                 }}
                 className="logIn__input"
                 value={passInputHandler}
-                type="text"
+                type="password"
                 id="pass"
                 placeholder="wpisz swoje hasło"
               />

@@ -1,0 +1,33 @@
+.basket {
+  display: none;
+
+  .basket__icon-container {
+    .basket__icon-number {
+      top: 0;
+      right: 10%;
+    }
+    .basket__icon {
+      color: $icons-color;
+      transition: 0.3s;
+      font-size: 20px;
+    }
+  }
+  .basket__price-container {
+    @include flexParent(row, nowrap, flex-start, center);
+    .basket__info {
+      display: none;
+      .basket__info-text {
+      }
+      .basket__info-price {
+      }
+    }
+    .basket__info-icon--container {
+      display: none;
+      .basket__info-icon {
+       
+      }
+    }
+   
+  }
+  
+}

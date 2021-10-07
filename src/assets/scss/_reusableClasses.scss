@@ -14,3 +14,22 @@
 .helmar__button:hover{
     background-color: $red-darker-color;
 }
+.halmar__number-relative{
+    position: relative;
+}
+.halmar__number{
+    position: absolute;
+    background-color: $black-background-color;
+    height: 13px;
+    width: 13px;
+    border-radius: 50%;
+    color: white;
+    font-size: 8px;
+    @include flexParent(row,nowrap,center,center);
+    top: -3px;
+    right: 25%;
+    transition: .3s;
+
+
+
+}
