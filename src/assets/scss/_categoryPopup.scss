@@ -33,11 +33,11 @@
       .categoryPopup__element:hover{
           
            .categoryPopup__icon{
-            color: $red-darker-color;
+            color: $red-color;
 
           }
           .categoryPopup__link{
-          color: $red-darker-color;
+          color: $red-color;
 
           }
       }
@@ -69,7 +69,7 @@
     }
     .categoryPopup__image-container::before{
         content: "";
-        background-color: $red-darker-color;
+        background-color: $red-color;
         position: absolute;
         width: 2px;
         height: 50px;

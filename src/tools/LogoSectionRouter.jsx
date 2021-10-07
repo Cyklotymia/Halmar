@@ -26,7 +26,7 @@ function LogoSectionRouter() {
         <i className="halmar-icon_05 logoSection__element-icon"></i>
         <span className="logoSection__element-text">KOSZYK</span>
       </Link>}
-     {/* {isUserLogged&& <BasketNav/>} */}
+     {isUserLogged&& <BasketNav/>}
     </div>
   );
 }

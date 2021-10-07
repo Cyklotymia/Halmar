@@ -148,6 +148,9 @@
       @include for-size(s){
         @include flexParent(column, nowrap, center, center);
       }
+      @include for-size(xm){
+        display: none;
+    }
     }
   }
   .logoSection__element:hover {

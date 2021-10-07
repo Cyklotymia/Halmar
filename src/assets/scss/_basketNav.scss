@@ -1,30 +1,58 @@
 .basket {
+    cursor: pointer;
   display: none;
+  height: 40px;
+  @include for-size(xm){
+     @include flexParent(row,nowrap,flex-start,center);
+  }
 
   .basket__icon-container {
+      background-color: $red-color;
+      color: white;
+      height: 100%;
+      min-width:40px;
+      @include flexParent(row,nowrap,center,center);
     .basket__icon-number {
-      top: 0;
-      right: 10%;
+        @include for-size(xm){
+         top: 5%;
+         height: 15px;
+         width: 15px;
+         right: 0;
+         }
     }
     .basket__icon {
-      color: $icons-color;
-      transition: 0.3s;
-      font-size: 20px;
+        font-size:20px;
+        transform: translateX(-2px);
+     
     }
   }
   .basket__price-container {
-    @include flexParent(row, nowrap, flex-start, center);
-    .basket__info {
-      display: none;
+    @include flexParent(row,nowrap,flex-start,center);
+    height: 40px;
+    border: 1px solid $border-color;
+      .basket__info {
+          height: 100%;
+          padding: 5px;
+        @include flexParent(column,nowrap,center,flex-start);
+        font-size: 8px;
+        font-weight: $font-w-bold;
+        border-left: none;
+      
       .basket__info-text {
+          text-transform: uppercase;
+         
       }
       .basket__info-price {
+        font-size: 12px;
       }
     }
     .basket__info-icon--container {
-      display: none;
+        padding: 0 10px;
+        transform: rotate(-90deg);
+        border-top: 1px solid $border-color;
       .basket__info-icon {
-       
+          font-size: 10px;
+
       }
     }
    
