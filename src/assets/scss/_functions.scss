@@ -1,0 +1,5 @@
+$base-viewport-width: 1700 !default;
+
+@function vw($value, $base: $base-viewport-width) {
+	@return ($value * 100 / $base) * 1vw;
+}

@@ -1,6 +1,7 @@
 .logoSection {
   @include flexParent(row, nowrap, space-between, center);
   padding: 10px 0;
+  max-height: 111px;
  
   @include for-size(s){
     padding: 15px 0;
@@ -53,39 +54,57 @@
   }
   .logoSection__logo-container {
     @include flexParent(row, nowrap, center, center);
-
     width: 170px;
+      max-width: 270px;
+    
 
     .logoSection__logo {
       width: 100%;
       height: auto;
     }
     @include for-size(s){
-      width: 140px;
+    
+      width: 20vw;
     }
   }
   .logoSection__form {
     display: none;
-    width: 30%;
-
-    height: 35px;
+    width: 30vw;
+    max-width: 530px;
+   max-height: 50px;
+    height: 3vw;
+    min-height: 35px;
+    margin: 0 20px;
+   
+    @include for-size(xl){
+    
+      margin: 0 70px;
+    }
+   
     .logoSection__input {
       background-color: $gray-color;
       height: 100%;
       font-size: 13px;
       flex-grow: 1;
       padding: 0 13px;
+     
     }
     .logoSection__button {
       background-color: $gray-color;
       border: none;
       height: 100%;
       min-width: 35px;
+      width: 3vw;
+      max-width:50px;
       transition: .3s;
       .logoSection__button-icon {
         color: $icons-color;
         transition: .3s;
-        font-size: 15px;
+        font-size: 1.5vw;
+        @include for-size(m){
+          font-size: 18px;
+        }
+        
       }
       
     }
@@ -104,25 +123,41 @@
   .logoSection__account {
     @include flexParent(row, nowrap, center, center);
     margin-right: 10px;
+    max-height: 50px;
+    height: 3vw;
+    min-height: 35px;
    
     .logoSection__element {
       display: none;
       color: $icons-color;
       transition: 0.3s;
       font-size: 20px;
-     
-  
-      .logoSection__element-text {
-        font-size: 8px;
-        margin-top: 5px;
-        font-weight: $font-w-medium;
-      }
+      height: 100%;
       @include for-size(s) {
         display: block;
         @include flexParent(column, nowrap, center, center);
         padding: 0 15px;
         border-right: $border-color solid 1px;
       }
+      @include for-size(m){
+        font-size: 25px;
+        padding: 0 20px;
+      }
+      @include for-size(l){
+        font-size:30px;
+        padding:  0 20px;
+      }
+     
+  
+      .logoSection__element-text {
+        font-size: 8px;
+        margin-top: 5px;
+        font-weight: $font-w-medium;
+        @include for-size(m){
+          font-size: 10px;
+        }
+      }
+
 
      
     }
@@ -136,6 +171,9 @@
       @include for-size(s){
         border-right: $border-color solid 1px;
       }
+      @include for-size(m){
+        border-right:none;
+      }
     
     }
     .logoSection__element:last-child{
@@ -143,22 +181,21 @@
      
     }
     .logoSection__element--basket{
+      max-width: 60px;
+      max-height: 60px;
       display: none;
       border:none;
       @include for-size(s){
         @include flexParent(column, nowrap, center, center);
       }
-      @include for-size(xm){
+      @include for-size(m){
         display: none;
     }
     }
   }
   .logoSection__element:hover {
     color: $red-color;
-    // .logoSection__element--number{
-      
-    //   background-color: $red-color;
-    // }
+ 
   }
 }
 
