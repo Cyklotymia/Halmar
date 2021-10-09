@@ -1,10 +1,10 @@
 import React, { useRef } from "react";
 import { Link } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
+// import { useDispatch, useSelector } from "react-redux";
 
 import { useContainerDimensions } from "../customHooks/resize";
 
-import mainSlider, { slides } from "../../redux/mainSlider";
+// import mainSlider, { slides } from "../../redux/mainSlider";
 
 import mainSliderData from "../../assets/data/mainSlider";
 ///imgs
@@ -40,7 +40,7 @@ const sliderElements = mainSliderData.slides.map((slider) => {
 
   return (
     <div className="slider" ref={componentRef}>
-      <p>width: {width}px</p>
+      {/* <p>width: {width}px</p> */}
 
       {sliderElements}
 
