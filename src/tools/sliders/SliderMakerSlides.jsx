@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 // import { useDispatch, useSelector } from "react-redux";
 
 import { useContainerDimensions } from "../customHooks/resize";
+import { useSelector } from "react-redux";
+
 
 // import mainSlider, { slides } from "../../redux/mainSlider";
 
@@ -12,6 +14,7 @@ import sliderImg1 from "../../assets/images/slider_01.jpg";
 import sliderImg2 from "../../assets/images/slider_02.jpg";
 
 export const SliderMakerSlides = () => {
+  const { indexOfShowedSlider } = useSelector((state) => state.mainSlider);
   const componentRef = useRef();
   const { width } = useContainerDimensions(componentRef);
   const imgs = [sliderImg1, sliderImg2];
@@ -20,7 +23,7 @@ export const SliderMakerSlides = () => {
     const link = width < 770 ? slider.link : "/";
 
     return (
-      <Link className="slider__element" key={slider.id} to={link}>
+      <Link className={`slider__element ${indexOfShowedSlider===parseInt(slider.id)?"active":"unActive"}`} key={slider.id} to={link}>
         <img className="slider__element--img" src={imgs[slider.id]} />
         <div className="slider__element--cover"></div>
         <div className="slider__element--container">
