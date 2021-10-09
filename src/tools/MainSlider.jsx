@@ -1,8 +1,10 @@
 import React from "react";
-
+import { SliderMakerSlides } from "./sliders/SliderMakerSlides";
 function MainSlider() {
     return ( 
-        <div>Tu jest slider</div>
+        <div className="MainSlider">
+            <SliderMakerSlides/>
+        </div>
      );
 }
 

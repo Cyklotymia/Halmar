@@ -105,3 +105,21 @@
     }
   }
 }
+
+/// top sizes
+
+@mixin positionTop{
+  top: 50px;
+ 
+  @include for-size(s){
+   
+    top: 122px;
+  }
+  @include for-size(m){
+   
+    top: 142px;
+  }
+  @include for-size(xl){
+    top: 152px;
+  }
+}

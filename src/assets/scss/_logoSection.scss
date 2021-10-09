@@ -1,13 +1,16 @@
 .logoSection {
   @include flexParent(row, nowrap, space-between, center);
   padding: 10px 0;
-  max-height: 111px;
+  height: 13vw;
+  max-height: 50px;
  
   @include for-size(s){
     padding: 15px 0;
+    max-height: 80px;
   }
   @include for-size(m){
     height: 80px;
+    max-height: 90px;
   }
   @include for-size(xl){
     height: 111px;

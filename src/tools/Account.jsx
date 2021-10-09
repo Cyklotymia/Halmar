@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { userLogged } from "../redux/account";
-import AccountLogged from "./AccountLogged";
 import { Link } from "react-router-dom";
+import AccountLogged from "./AccountLogged";
 
 // onClick={()=>{
 //     dispatch(userLogged({login:"login",pass:"haslo"}))
@@ -10,6 +10,7 @@ import { Link } from "react-router-dom";
 //     }
 
 function Account() {
+  
   const dispatch = useDispatch();
   const { isUserLogged } = useSelector((state) => state.account);
   const [passInputHandler, setPassInputHandler] = useState("");
@@ -20,9 +21,9 @@ function Account() {
       login: logInputHandler,
       pass: passInputHandler,
     };
-    dispatch(userLogged(loginObj))
-    setPassInputHandler("")
-    setLogInputHandler("")
+    dispatch(userLogged(loginObj));
+    setPassInputHandler("");
+    setLogInputHandler("");
   };
 
   return (
@@ -75,10 +76,9 @@ function Account() {
                 Przypomnij hasło
               </Link>
               <div className="logIn__form-button--container">
-
-            <button className="helmar__button logIn__button">
-              Zaloguj się
-            </button>
+                <button className="halmar__button logIn__button">
+                  Zaloguj się
+                </button>
               </div>
             </div>
           </form>

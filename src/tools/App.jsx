@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "../assets/scss/main.scss";
 import Account from "./Account";
 import Header from "./Header";
-// import MainSlider from "./MainSlider";
+import MainSlider from "./MainSlider";
 // import Test from "./Test";
 
 
@@ -20,7 +20,11 @@ const App = () => {
               <Account/>
           </Route>
       </Switch>
-
+      <Switch>
+          <Route exact path="/">
+              <MainSlider/>
+          </Route>
+      </Switch>
         </section>
         
     </Router>

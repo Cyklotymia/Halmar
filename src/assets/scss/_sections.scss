@@ -15,17 +15,19 @@
    
 }
 .main{
-    background-color: $gray-color;
-    padding-top: $logoSection-height-s;
-    @include for-size(s){
-        padding-top: $logoSection-height;
-      }
-    @include for-size(xm){
-        padding-top: 130px;
-      }
-      @include for-size(m){
-        padding-top: 173px;;
-      }
+padding-top: 50px;
+ background-color: $gray-color;
+  @include for-size(s){
+   
+    padding-top: 120px;
+  }
+  @include for-size(m){
+   
+    padding-top: 140px;
+  }
+  @include for-size(xl){
+    padding-top: 150px;
+  }
 }
 body{
     height:200vh;

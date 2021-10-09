@@ -3,12 +3,13 @@
 .hamburgerPopup {
  background-color: white;
   position: absolute;
-  top: $logoSection-height-s;
+
   width: 85vw;
   left: -100%;
   height: calc(100vh - 55px);
   border-right: solid 1px $border-color;
   transition: 0.5s;
+  @include positionTop();
     @include for-size(s){
         display: none
     }

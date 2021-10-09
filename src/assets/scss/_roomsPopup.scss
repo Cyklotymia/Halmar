@@ -7,8 +7,9 @@
   border-bottom: 1px solid $border-color;
   @include flexParent(row, wrap, space-evenly, flex-start);
   height: 260px;
+  @include positionTop();
   @include for-size(m){
-    top: 173px;
+    
     height: 370px;
   }
   .roomsPopup__container {

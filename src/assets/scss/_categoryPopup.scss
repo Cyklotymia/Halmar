@@ -2,13 +2,11 @@
   position: absolute;
   padding: 20px 0;
   border-bottom: 1px $border-color solid;
-  top: $logoSection-height;
+ 
   left: 0;
   width: 100vw;
   background-color: white;
-  @include for-size(m){
-    top: 173px;
-  }
+  @include positionTop();
   
   .categoryPopup__container {
     @include flexParent(row, nowrap, flex-start, center);
