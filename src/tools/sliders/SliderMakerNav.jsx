@@ -8,11 +8,15 @@ function SliderMakerNav() {
     const dispatch = useDispatch();
     const { indexOfShowedSlider } = useSelector((state) => state.mainSlider);
   const nav = mainSliderData.data.nav;
-  console.log(indexOfShowedSlider)
 
   const navHandler=(e)=>{
-   console.log(e.target.id);
-   dispatch(clickIndex(parseInt(e.target.id)))
+    
+   if (e.target.id || e.target.closest('.slider__nav--container').id) {
+     const index = e.target.id ||e.target.closest('.slider__nav--container').id
+      dispatch(clickIndex(parseInt(index)))
+   }else{
+     return
+   }
   }
   const navElements=mainSliderData.slides.map(slides=>{
       return(

@@ -122,6 +122,7 @@
     z-index: 3;
     transform: translateX(-50%);
     @include flexParent(row, nowrap, flex-start, center);
+    background-color: yellow;
     .slider__nav--container {
       height: 40px;
       width: 40px;

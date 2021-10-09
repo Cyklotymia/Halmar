@@ -5,20 +5,31 @@ export const mainSlider=createSlice({
     name:"mainSlider",
     initialState:{
        indexOfShowedSlider:0,
-    //    slides:mainSliderData.slides
+       slides:mainSliderData.slides
     },
     reducers:{
         nextIndex:(state)=>{
-            state.indexOfShowedSlider=indexOfShowedSlider+1
+            state.indexOfShowedSlider=state.indexOfShowedSlider+1
+            if (state.indexOfShowedSlider>state.slides.length-1) {
+                state.indexOfShowedSlider=0
+            }
         },
         prevIndex:(state)=>{
-            state.indexOfShowedSlider=indexOfShowedSlider-1
+            state.indexOfShowedSlider=state.indexOfShowedSlider-1
+            if (state.indexOfShowedSlider<0) {
+                state.indexOfShowedSlider=state.slides.length-1
+            }
         },
         clickIndex:(state,index)=>{
-            if (!index.payload) {
-                state.indexOfShowedSlider=indexOfShowedSlider
+            console.log(index.payload);
+            if (!index.payload && index.payload!==0) {
+                
+                state.indexOfShowedSlider=state.indexOfShowedSlider
+            }else{
+              
+
+                state.indexOfShowedSlider=index.payload
             }
-            state.indexOfShowedSlider=index.payload
         }
     }
 })
