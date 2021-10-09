@@ -5,12 +5,23 @@ export const mainSlider=createSlice({
     name:"mainSlider",
     initialState:{
        indexOfShowedSlider:0,
-       slides:mainSliderData.slides
+    //    slides:mainSliderData.slides
     },
     reducers:{
-        
+        nextIndex:(state)=>{
+            state.indexOfShowedSlider=indexOfShowedSlider+1
+        },
+        prevIndex:(state)=>{
+            state.indexOfShowedSlider=indexOfShowedSlider-1
+        },
+        clickIndex:(state,index)=>{
+            if (!index.payload) {
+                state.indexOfShowedSlider=indexOfShowedSlider
+            }
+            state.indexOfShowedSlider=index.payload
+        }
     }
 })
 
-export const {indexOfShowedSlider,slides}=mainSlider.actions;
+export const {nextIndex,prevIndex,clickIndex}=mainSlider.actions;
 export default mainSlider.reducer;

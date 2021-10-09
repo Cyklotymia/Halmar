@@ -6,10 +6,10 @@ function SliderMakerArrows() {
     const arrowRight=mainSliderData.data.arrowsIconRight
     return (
         <>
-        {arrowLeft && <div className= "slider__arrow-container--left">
+        {arrowLeft && <div className= " slider__arrow-container slider__arrow-container--left">
             <i className={`${mainSliderData.data.arrowsIconLeft} slider__arrow`}></i>
             </div>}
-        {arrowRight && <div className= "slider__arrow-container--right">
+        {arrowRight && <div className= " slider__arrow-container slider__arrow-container--right">
             <i className={`${mainSliderData.data.arrowsIconRight} slider__arrow`}></i>
             </div>}
         </>
