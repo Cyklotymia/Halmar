@@ -16,24 +16,31 @@ export const SliderMakerSlides = () => {
   const { width } = useContainerDimensions(componentRef);
   const imgs = [sliderImg1, sliderImg2];
 
+  const sliderElements = mainSliderData.slides.map((slider) => {
+    const link = width < 770 ? slider.link : "/";
 
-
-const sliderElements = mainSliderData.slides.map((slider) => {
-      const link = width < 770 ?slider.link : "/";
-     
     return (
       <Link className="slider__element" key={slider.id} to={link}>
-        <img className="slider__element--img"src={imgs[slider.id]} />
+        <img className="slider__element--img" src={imgs[slider.id]} />
+        <div className="slider__element--cover"></div>
         <div className="slider__element--container">
-        <h3 className="slider__element--header">{slider.header}</h3>
-        <span className="slider__element--text">{slider.text}</span>
-      
-        {width > 770 && <button className="slider__element--button halmar__button"  to={slider.link}>
-            {mainSliderData.data.buttonText}
-        </button>}
+          <div className="wrapper">
+          <h3 className="slider__element--header">
+            <span className="slider__element--header-element">{slider.header}</span>
+            <span className="slider__element--header-element">{slider.headerTwo}</span>
+            </h3>
+          <span className="slider__element--text">{slider.text}</span>
 
+          {width > 770 && (
+            <button
+              className="slider__element--button halmar__button"
+              to={slider.link}
+            >
+              {mainSliderData.data.buttonText}
+            </button>
+          )}
+          </div>
         </div>
-      
       </Link>
     );
   });

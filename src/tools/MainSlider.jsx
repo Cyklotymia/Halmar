@@ -4,11 +4,11 @@ import SliderMakerNav from "./sliders/SliderMakerNav";
 import { SliderMakerSlides } from "./sliders/SliderMakerSlides";
 function MainSlider() {
     return ( 
-        <div className="MainSlider">
+        <section className="MainSlider">
             <SliderMakerSlides/>
             <SliderMakerArrows/>
             <SliderMakerNav/>
-        </div>
+        </section>
      );
 }
 

@@ -10,8 +10,8 @@ const mainSliderData = {
 
     },
     slides:[
-    { id:0,link: "/derrick",header:"stół derrick",text:"produkt najwyższej jakości, wyróżniający się designem i praktycznością"},
-    {id:1, link: "/windsor",header:"stół windsor",text:"produkt najwyższej jakości, wyróżniający się designem i praktycznością"},
+    { id:0,link: "/derrick",header:"stół",headerTwo:"derrick",text:"Produkt najwyższej jakości, wyróżniający się designem i praktycznością"},
+    {id:1, link: "/windsor",header:"stół",headerTwo:"windsor",text:"Produkt najwyższej jakości, wyróżniający się designem i praktycznością"},
  
   ]};
   

@@ -1,0 +1,114 @@
+.MainSlider {
+    position: relative;
+  .slider {
+    width: 100%;
+    height: 60vw;
+    position: relative;
+    overflow: hidden;
+    .slider__element {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      .slider__element--cover {
+        background: rgb(0, 0, 0);
+        background: linear-gradient(
+          90deg,
+          rgba(0, 0, 0, 0.24) 100%,
+          rgba(0, 0, 0, 0.021) 100%,
+          rgba(0, 0, 0, 0) 100%
+        );
+        position: absolute;
+        width: 100%;
+        height: 100%;
+      }
+
+      .slider__element--img {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-45%);
+        display: block;
+
+        height: 100%;
+      }
+      .slider__element--container {
+        position: absolute;
+        width: 100%;
+        color: white;
+        top: 30%;
+        padding-left: 15px;
+
+        .slider__element--header {
+          @include flexParent(row, nowrap, flex-start, center);
+          text-transform: uppercase;
+          font-size: 30px;
+          padding-bottom: 10px;
+          height: 50px;
+          .slider__element--header-element:nth-child(1) {
+            font-weight: $font-w-light;
+            padding-right: 10px;
+          }
+          .slider__element--header-element:nth-child(2) {
+          }
+        }
+        .slider__element--header::before {
+          height: 100%;
+          content: "";
+          display: block;
+          width: 3px;
+          background-color: $red-darker-color;
+          margin-right: 10px;
+        }
+        .slider__element--text {
+          font-weight: $font-w-light;
+        }
+        .slider__element--button {
+        }
+      }
+    }
+    .slider__element.active {
+      z-index: 5;
+    }
+  }
+  .slider__arrow-container--left {
+    display: none;
+    .slider__arrow--left {
+    }
+  }
+  .slider__arrow-container--right {
+    display: none;
+    .slider__arrow {
+    }
+  }
+  .slider__nav {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    @include flexParent(row, nowrap, flex-start, center);
+    .slider__nav--element {
+      height: 40px;
+      width: 40px;
+      position: relative;
+      cursor: pointer;
+    }
+    .slider__nav--element::before{
+        content: "";
+        position: absolute;
+        background-color: white;
+        opacity: 0.3;
+        width: 30px;
+        height: 3px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+
+    }
+
+    .slider__nav--element.active{
+        .slider__nav--element::before{
+            background-color: $red-darker-color;
+        }
+    }
+  }
+}
