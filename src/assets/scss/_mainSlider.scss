@@ -1,15 +1,18 @@
 .MainSlider {
-    position: relative;
+  position: relative;
   .slider {
     width: 100%;
     height: 60vw;
+    min-height: 300px;
     position: relative;
     overflow: hidden;
+    max-height: 650px;
     .slider__element {
       position: absolute;
       width: 100%;
       height: 100%;
       opacity: 0;
+      transition: 1s;
       .slider__element--cover {
         background: rgb(0, 0, 0);
         background: linear-gradient(
@@ -27,46 +30,97 @@
         position: absolute;
         top: 0;
         left: 50%;
-        transform: translateX(-45%);
+        transform: translateX(-50%);
+        object-fit: cover;
         display: block;
-
+        max-height: 100%;
         height: 100%;
+        height: auto;
+        min-width: 100%;
+        @include for-size(l) {
+          left: 0;
+          transform: none;
+        }
       }
       .slider__element--container {
         position: absolute;
         width: 100%;
         color: white;
-        top: 30%;
+        top: 40%;
+
         padding-left: 15px;
-        
+        @include for-size(s) {
+          left: 5%;
+          top: 30%;
+        }
+       
+        @include for-size(xl) {
+          left: 0;
+        }
 
         .slider__element--header {
           @include flexParent(row, nowrap, flex-start, center);
           text-transform: uppercase;
           font-size: 30px;
-          padding-bottom: 10px;
+          padding-bottom: 15px;
           height: 50px;
+          max-width: 800px;
+          @include for-size(xs) {
+            font-size: 6vw;
+          }
+          @include for-size(s) {
+            font-size: 50px;
+            height: 80px;
+          }
+          @include for-size(m) {
+            font-size: 60px;
+            margin-bottom: 30px;
+          }
           .slider__element--header-element:nth-child(1) {
             font-weight: $font-w-light;
             padding-right: 10px;
           }
-          .slider__element--header-element:nth-child(2) {
-          }
+          // .slider__element--header-element:nth-child(2) {
+          // }
         }
         .slider__element--header::before {
-          height: 100%;
+          min-height: 100%;
           content: "";
           display: block;
           width: 3px;
           background-color: $red-darker-color;
-          margin-right: 10px;
+          margin-right: 20px;
         }
         .slider__element--text {
+          margin-top: 10px;
+          display: block;
           font-weight: $font-w-light;
+          width: 80%;
+          max-width:600px ;
+          @include for-size(xs) {
+            font-size: 3vw;
+            margin-top: 20px;
+          }
+          @include for-size(s) {
+            font-size: 23px;
+            margin-top: 25px;
+          }
+          @include for-size(m) {
+            font-size: 26px;
+          }
         }
         .slider__element--button {
-            display: block;
-            margin-top: 50px;
+          display: block;
+          margin-top: 50px;
+          height: 40px;
+          width: 200px;
+          font-size: 14px;
+          padding: 0;
+          @include for-size(m) {
+            height: 50px;
+            width: 218px;
+            font-size:13px ;
+          }
         }
       }
     }
@@ -75,45 +129,48 @@
       opacity: 1;
     }
   }
-  .slider__arrow-container{
-      display: none;
-      position: absolute;
-     cursor: pointer;
-      top: 50%;
-      transform: translateY(-50%);
-      z-index: 3;
-      height: 50px;
-      width: 50px;
-      color: black;
-      background-color: rgba(255, 255, 255, 0.342);
-      transition: .5s;
-      @include for-size(s){
-          display: block
-      };
-      .slider__arrow {
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%,-50%);
+  .slider__arrow-container {
+    display: none;
+    opacity: 0;
+    position: absolute;
+    cursor: pointer;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 3;
+    height: 50px;
+    width: 50px;
+    color: black;
+    background-color: rgba(255, 255, 255, 0.342);
+    transition: 0.5s;
+    @include for-size(s) {
+      display: block;
     }
-
+    .slider__arrow {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
   }
   .slider__arrow-container--left {
-      left: 0;
+    left: 0;
     .slider__arrow {
-        transform: translate(-50%,-50%) rotate(90deg);
+      transform: translate(-50%, -50%) rotate(90deg);
     }
   }
   .slider__arrow-container--right {
-     right: 0;
-   
+    right: 0;
+
     .slider__arrow {
-        transform: translate(-50%,-50%) rotate(-90deg);
+      transform: translate(-50%, -50%) rotate(-90deg);
     }
   }
-  .slider__arrow-container:hover{
-     background-color: $red-color;
-     color: white;
+  .slider__arrow-container:hover {
+    background-color: $red-color;
+    color: white;
+  }
+  .slider__arrow-container.active{
+    opacity:1 ;
   }
   .slider__nav {
     position: absolute;
@@ -122,31 +179,30 @@
     z-index: 3;
     transform: translateX(-50%);
     @include flexParent(row, nowrap, flex-start, center);
-    background-color: yellow;
+
     .slider__nav--container {
       height: 40px;
       width: 40px;
       position: relative;
       cursor: pointer;
-      .slider__nav--element{
-          content: "";
-          position: absolute;
-          background-color: rgb(255, 255, 255);
-          opacity: 0.3;
-          width: 30px;
-          height: 3px;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%,-50%);
-  
+      .slider__nav--element {
+        content: "";
+        position: absolute;
+        background-color: rgb(255, 255, 255);
+        opacity: 0.3;
+        width: 30px;
+        height: 3px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
       }
     }
 
-    .slider__nav--container.active{
-        .slider__nav--element{
-            background-color: $red-darker-color;
-            opacity: 1;
-        }
+    .slider__nav--container.active {
+      .slider__nav--element {
+        background-color: $red-darker-color;
+        opacity: 1;
+      }
     }
   }
 }
