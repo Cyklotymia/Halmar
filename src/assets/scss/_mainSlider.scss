@@ -116,6 +116,7 @@
           width: 200px;
           font-size: 14px;
           padding: 0;
+          @include flexParent(row,nowrap,center,center);
           @include for-size(m) {
             height: 50px;
             width: 218px;
@@ -169,9 +170,7 @@
     background-color: $red-color;
     color: white;
   }
-  .slider__arrow-container.active{
-    opacity:1 ;
-  }
+ 
   .slider__nav {
     position: absolute;
     bottom: 0;
@@ -204,5 +203,10 @@
         opacity: 1;
       }
     }
+  }
+}
+.MainSlider.active{
+  .slider__arrow-container{
+    opacity:1 ;
   }
 }

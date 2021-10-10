@@ -6,7 +6,8 @@ import { useContainerDimensions } from "../customHooks/resize";
 import { useSelector } from "react-redux";
 
 
-// import mainSlider, { slides } from "../../redux/mainSlider";
+
+
 
 import mainSliderData from "../../assets/data/mainSlider";
 ///imgs
@@ -14,6 +15,7 @@ import sliderImg1 from "../../assets/images/slider_01.jpg";
 import sliderImg2 from "../../assets/images/slider_02.jpg";
 
 export const SliderMakerSlides = () => {
+ 
   const { indexOfShowedSlider } = useSelector((state) => state.mainSlider);
   const componentRef = useRef();
   const { width } = useContainerDimensions(componentRef);
@@ -37,7 +39,12 @@ export const SliderMakerSlides = () => {
           {width > 770 && (
             <button
               className="slider__element--button halmar__button"
-              to={slider.link}
+              href={slider.link}
+              onClick={
+                (e)=>{
+                
+                location.href=slider.link
+              }}
             >
               {mainSliderData.data.buttonText}
             </button>
@@ -47,14 +54,15 @@ export const SliderMakerSlides = () => {
       </Link>
     );
   });
+ 
 
   return (
-    <div className="slider" ref={componentRef}>
-      {/* <p>width: {width}px</p> */}
+    <div  className="slider"  ref={componentRef}>
+     
 
       {sliderElements}
 
-      {/* <img src={slider} alt="" /> */}
+     
     </div>
   );
 };
