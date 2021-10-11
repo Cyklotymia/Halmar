@@ -1,0 +1,70 @@
+.productSlider {
+  position: relative;
+  max-width: 100%;
+  overflow: hidden;
+  padding: 30px 50px;
+  background-color: white;
+  .productSlider__container {
+    width: auto;
+    @include flexParent(row, nowrap, flex-start, center);
+    .productSlider__element {
+      cursor: pointer;
+      min-width: 50%;
+      height: 80px;
+      @include flexParent(column, nowrap, center, center);
+      border-left: 1px solid $border-color;
+      .productSlider__icon {
+        font-size: 25px;
+        color: $red-color;
+        margin-bottom: 10px;
+        transition: 0.3s;
+      }
+      .productSlider__text {
+        text-transform: uppercase;
+        font-size: 12px;
+        transition: 0.3s;
+      }
+    }
+    .productSlider__element:nth-child(1) {
+      border: none;
+    }
+    .productSlider__element:hover {
+      .productSlider__text {
+        color: $red-color;
+      }
+      .productSlider__icon {
+        transform: translateY(5px);
+      }
+    }
+  }
+  .arrowLeft__container {
+    left: 0;
+    transform: translateY(-50%);
+    border-right: 1px solid $border-color;
+    .arrow {
+      transform: rotate(90deg);
+    }
+  }
+  .arrowRight__container {
+    right: 0;
+    transform: translateY(-50%);
+    border-left: 1px solid $border-color;
+    .arrow {
+      transform: rotate(-90deg);
+    }
+  }
+
+  .arrow__container {
+    position: absolute;
+    top: 50%;
+    height: 80px;
+    width: 50px;
+    @include flexParent(row, nowrap, center, center);
+    cursor: pointer;
+
+    .arrow {
+      font-weight: $font-w-light;
+      color: $text-color;
+    }
+  }
+}

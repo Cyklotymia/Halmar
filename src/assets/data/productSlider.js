@@ -6,8 +6,8 @@ const productSliderData = {
   },
   data: {
     nav: false,
-    arrowsIconRight: "halmar-icon_30",
-    arrowsIconLeft: "halmar-icon_30",
+    arrowRight: "halmar-icon_30 arrow",
+    arrowLeft: "halmar-icon_30 arrow",
     interval: 5000,
   },
   slides: [

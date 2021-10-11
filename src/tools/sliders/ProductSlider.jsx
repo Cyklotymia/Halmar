@@ -1,5 +1,6 @@
 import React from "react";
 import CreatorElements from "./CreatorElements";
+import SliderArrows from "./SliderArrows";
 
 function ProductSlider({ data }) {
   const { className, slides } = data;
@@ -12,7 +13,15 @@ function ProductSlider({ data }) {
     );
   });
 
-  return <div className={className}>{sliderElements}</div>;
+  return (
+    <div className={className}>
+        <div className="productSlider__container">
+      {sliderElements}
+
+        </div>
+      <SliderArrows dataArrows={data} />
+    </div>
+  );
 }
 
 export default ProductSlider;
