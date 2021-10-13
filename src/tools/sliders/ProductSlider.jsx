@@ -3,23 +3,39 @@ import CreatorElements from "./CreatorElements";
 import SliderArrows from "./SliderArrows";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { resetIndex } from "../../redux/productSliderRedux";
+import { moveRight, updateSlidesRight} from "../../redux/productSliderRedux";
+import useHover from "../customHooks/useHover";
 
 function ProductSlider({ data }) {
   const { className} = data;
   const { activeIndex,slides,transition} = useSelector((state) => state.productSliderRedux);
 const dispatch = useDispatch()
   const [allSliders, setAllSliders] = useState([]);
-  const [styles, setStyles] = useState({transition:".3s"});
+  const [styles, setStyles] = useState({transition:".5s"});
   const addSliders = (slider) => {
     if (slider && !allSliders.includes(slider)) {
     setAllSliders([...allSliders, slider].reverse());
   }
 };
 
+const [hoverRef, isHovered] = useHover();
+useEffect(()=>{
+  if (!isHovered) {
+      const interval= setInterval(()=>{
+          dispatch(moveRight())
+          setTimeout(() => {
+            dispatch(updateSlidesRight());
+          }, 300);
+      },3000)
+      
+      return ()=>clearInterval(interval)
+  }
+
+},[isHovered])
 
 
 const sliderElements = slides.map((slide) => {
+
   return (
     <Link
     ref={addSliders}
@@ -47,7 +63,7 @@ if (allSliders.length===sliderElements.length) {
 
     setStyles({
       transform:`translateX(-${allSliders[activeIndex].offsetWidth*activeIndex}px)`,
-      transition:`.4s`
+      transition:`0.3s linear`
       
     })
   }
@@ -58,7 +74,7 @@ if (allSliders.length===sliderElements.length) {
 }
 }, [transition])
   return (
-    <div className={className}>
+    <div ref={hoverRef} className={className}>
       <div style={styles}
       
       

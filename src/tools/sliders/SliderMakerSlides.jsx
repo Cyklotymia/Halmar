@@ -42,7 +42,7 @@ export const SliderMakerSlides = () => {
               className="slider__element--button halmar__button"
               href={slider.link}
               onClick={
-                (e)=>{
+                ()=>{
                 
                 location.href=slider.link
               }}
