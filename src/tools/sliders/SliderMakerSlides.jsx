@@ -23,6 +23,7 @@ export const SliderMakerSlides = () => {
 
   const sliderElements = mainSliderData.slides.map((slider) => {
     const link = width < 770 ? slider.link : "/";
+   
 
     return (
       <Link className={`slider__element ${indexOfShowedSlider===parseInt(slider.id)?"active":"unActive"}`} key={slider.id} to={link}>

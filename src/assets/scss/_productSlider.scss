@@ -23,6 +23,7 @@
         text-transform: uppercase;
         font-size: 12px;
         transition: 0.3s;
+        color:$text-color;
       }
     }
     .productSlider__element:nth-child(1) {
@@ -55,6 +56,7 @@
   }
 
   .arrow__container {
+    background-color: white;
     position: absolute;
     top: 50%;
     height: 80px;

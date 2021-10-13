@@ -1,17 +1,38 @@
 import React from "react";
 
-function SliderArrows({ dataArrows }) {
-  const { data } = dataArrows;
-  console.log(data);
+import { useDispatch, useSelector } from "react-redux";
+import {moveRight,moveLeft,updateSlidesRight} from "../../redux/productSliderRedux";
+
+
+function SliderArrows() {
+  const dispatch = useDispatch();
+  const { data,activeIndex} = useSelector((state) => state.productSliderRedux);
+  // console.log(data);
+  const arrowHandler=(e)=>{
+    
+    if (e.target.closest(".arrowRight__container")) {
+      dispatch(moveRight())
+      setTimeout(()=>{
+        dispatch(updateSlidesRight())
+      },200)
+     
+      
+     
+
+    }else if (e.target.closest(".arrowLeft__container")) {
+      dispatch(moveLeft())
+      
+    }
+  }
   return (
     <>
       {data.arrowLeft && (
-        <div className="arrowLeft__container arrow__container">
+        <div onClick={(e)=>{arrowHandler(e)}} className="arrowLeft__container arrow__container">
           <i className={data.arrowLeft}></i>
         </div>
       )}
        {data.arrowRight && (
-        <div className="arrowRight__container  arrow__container">
+        <div onClick={(e)=>{arrowHandler(e)}} className="arrowRight__container  arrow__container">
           <i className={data.arrowLeft}></i>
         </div>
       )}

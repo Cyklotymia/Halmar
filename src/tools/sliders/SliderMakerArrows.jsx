@@ -8,7 +8,6 @@ function SliderMakerArrows() {
     const arrowLeft=mainSliderData.data.arrowsIconLeft
     const arrowRight=mainSliderData.data.arrowsIconRight
     const dispatch = useDispatch();
-    // const { indexOfShowedSlider } = useSelector((state) => state.mainSlider);
  
     return (
         <>

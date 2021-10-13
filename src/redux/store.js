@@ -3,6 +3,7 @@ import activeNavReducer from "./activeNav";
 import activeHamburgerReducer from "./activeHamburger";
 import accountrReducer from "./account";
 import mainSlider from "./mainSlider";
+import productSliderRedux from "./productSliderRedux";
 
 export default configureStore({
     reducer:{
@@ -10,5 +11,6 @@ export default configureStore({
         activeHamburger:activeHamburgerReducer,
         account:accountrReducer,
         mainSlider,
+        productSliderRedux,
     }
 })
