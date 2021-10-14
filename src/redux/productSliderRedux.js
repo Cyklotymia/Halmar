@@ -9,17 +9,23 @@ export const productSliderRedux = createSlice({
     data: productSliderData.data,
     activeIndex: 0,
     changeIndexBy: productSliderData.type.changesBy,
-    transition:0,
+    transitionRight:0,
+    transitionLeft:1,
+   click:"right"
   },
   reducers: {
     moveRight: (state) => {
-
+      state.click="right"
      state.activeIndex = state.activeIndex + state.changeIndexBy;
       state.activeIndex =state.activeIndex > state.slides.length - 1 ? 0 : state.activeIndex;
-      state.transition=1
+      state.transitionRight=1
       
     },
     updateSlidesRight:(state)=>{
+      state.click="right"
+    
+      state.activeIndex=0
+      state.transitionRight=0
       const itemToPush = state.slides[0];
       state.slides = [...state.slides, itemToPush];
 
@@ -27,15 +33,30 @@ export const productSliderRedux = createSlice({
       newSlides.shift()
       state.slides=newSlides
      
-      state.activeIndex=0
-      state.transition=0
   
     },
     moveLeft: (state) => {
+     
+      state.click="left"
       state.activeIndex = state.activeIndex - state.changeIndexBy;
+      state.transitionLeft=1
+      state.activeIndex =0;
 
-      state.activeIndex =
-        state.activeIndex < 0 ? state.slides.length - 1 : state.activeIndex;
+    },
+    updateSlidesLeft:(state)=>{
+      state.click="left"
+      
+      state.transitionLeft=0
+      const itemToPop = state.slides[state.slides.length-1];
+      state.slides = [itemToPop,...state.slides];
+
+      const newSlides=[...state.slides]
+      newSlides.pop()
+      state.activeIndex=1
+    
+      state.slides=newSlides
+     
+  
     },
     resetIndex:(state)=>{
       state.activeIndex=0
@@ -43,5 +64,5 @@ export const productSliderRedux = createSlice({
   },
 });
 
-export const { moveRight, moveLeft,resetIndex,updateSlidesRight } = productSliderRedux.actions;
+export const { moveRight, moveLeft,resetIndex,updateSlidesRight,updateSlidesLeft } = productSliderRedux.actions;
 export default productSliderRedux.reducer;

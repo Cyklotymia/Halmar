@@ -5,6 +5,7 @@ import {
   moveRight,
   moveLeft,
   updateSlidesRight,
+  updateSlidesLeft,
 } from "../../redux/productSliderRedux";
 
 function SliderArrows() {
@@ -20,8 +21,14 @@ function SliderArrows() {
         dispatch(updateSlidesRight());
       }, 300);
     } else if (e.target.closest(".arrowLeft__container")) {
-      dispatch(moveLeft());
+      dispatch(updateSlidesLeft());
+      setTimeout(() => {
+        dispatch(moveLeft());
+      }, 100);
+
     }
+
+  
   };
   return (
     <>

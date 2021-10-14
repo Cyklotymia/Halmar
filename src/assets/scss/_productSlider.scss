@@ -34,6 +34,9 @@
    
         margin-bottom: 10px;
         transition: 0.3s;
+        @include for-size(l){
+          for-size:40px;
+        }
       }
       .productSlider__text {
         text-transform: uppercase;
