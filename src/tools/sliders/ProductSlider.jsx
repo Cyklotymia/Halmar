@@ -7,6 +7,8 @@ import { moveRight, updateSlidesRight } from "../../redux/productSliderRedux";
 import useHover from "../customHooks/useHover";
 
 function ProductSlider({ data }) {
+  
+
   const { className } = data;
   const { activeIndex, slides, transitionRight, transitionLeft, click } =
     useSelector((state) => state.productSliderRedux);
@@ -18,9 +20,12 @@ function ProductSlider({ data }) {
       setAllSliders([...allSliders, slider].reverse());
     }
   };
-
+  
   const [hoverRef, isHovered] = useHover();
+
+  
   useEffect(() => {
+
     if (!isHovered) {
       const interval = setInterval(() => {
         dispatch(moveRight());
