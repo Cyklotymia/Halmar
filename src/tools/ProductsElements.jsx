@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { changeProduct } from "../redux/products";
 import exampleImg from "../assets/images/produkt.jpg";
 
 function ProductsElements() {
@@ -11,7 +10,7 @@ function ProductsElements() {
   const productsElement = products.map((product) => {
     if (choosedProducts === product.name) {
       const item = product.items.map((element) => {
-        const { id, imgName, code, info, otherCategory, link } = element;
+        const { id, code, info, otherCategory, link } = element;
         const name =
           element.name.length < 27
             ? element.name
@@ -26,9 +25,9 @@ function ProductsElements() {
         });
         const moreInfo = () => {
           return (
-            <span>
+            <span className="products__element-text--infoLog">
               Po więcej informacji musisz się{" "}
-              <Link to="/account">zalogować</Link>
+              <Link className="products__element-text--infoLogLink"className=""to="/account">zalogować</Link>
             </span>
           );
         };
@@ -56,7 +55,7 @@ function ProductsElements() {
                   więcej
                 </Link>
                 <Link to={"/"} className="products__element-fav">
-                  <i className="hamlar-icon_03"></i>
+                  <i className="hamlar-icon_03 products__element-fav--icon"></i>
                 </Link>
               </div>
             </div>
