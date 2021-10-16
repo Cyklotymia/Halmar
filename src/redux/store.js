@@ -4,6 +4,7 @@ import activeHamburgerReducer from "./activeHamburger";
 import accountrReducer from "./account";
 import mainSlider from "./mainSlider";
 import productSliderRedux from "./productSliderRedux";
+import products from "./products";
 
 export default configureStore({
     reducer:{
@@ -12,5 +13,6 @@ export default configureStore({
         account:accountrReducer,
         mainSlider,
         productSliderRedux,
+        products,
     }
 })

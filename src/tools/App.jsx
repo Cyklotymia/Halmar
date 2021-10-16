@@ -6,6 +6,7 @@ import Account from "./Account";
 import Banners from "./Banners";
 import Header from "./Header";
 import MainSlider from "./MainSlider";
+import Products from "./Products";
 // import Test from "./Test";
 import ProductSlider from "./sliders/ProductSlider";
 
@@ -28,6 +29,7 @@ const App = () => {
               <MainSlider/>
               <ProductSlider data={productSliderData}/>
               <Banners/>
+              <Products/>
           </Route>
       </Switch>
         </section>
