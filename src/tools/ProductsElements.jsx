@@ -17,8 +17,23 @@ function ProductsElements() {
             : element.name.slice(0, 27) + "...";
 
         const category = otherCategory.map((category) => {
+let color
+            switch (category) {
+                case "promocja":
+                    color="#fa182a";
+                    break;
+                    case "bestseller":
+                        color="#e31519";
+                        break;
+                        case "nowość":
+                            color="#80b61a";
+                            break;
+            
+                default:
+                    break;
+            }
           return (
-            <span key={category} className="products__element-category">
+            <span style={{backgroundColor:`${color}`}} key={category} className="products__element-category">
               {category}
             </span>
           );
@@ -27,14 +42,15 @@ function ProductsElements() {
           return (
             <span className="products__element-text--infoLog">
               Po więcej informacji musisz się{" "}
-              <Link className="products__element-text--infoLogLink"className=""to="/account">zalogować</Link>
+              <Link className="products__element-text--infoLogLink"to="/account">zalogować</Link>
             </span>
           );
         };
 
         return (
           <div className="products__element" key={id}>
-            {category}
+              <div className="products__element-category--container">{category}</div>
+            
             <Link className="products__element-img--container" to={link}>
               <img src={exampleImg} alt="" className="products__element-img" />
             </Link>
@@ -55,7 +71,7 @@ function ProductsElements() {
                   więcej
                 </Link>
                 <Link to={"/"} className="products__element-fav">
-                  <i className="hamlar-icon_03 products__element-fav--icon"></i>
+                  <i className="halmar-icon_03 products__element-fav--icon"></i>
                 </Link>
               </div>
             </div>
