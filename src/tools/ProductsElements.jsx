@@ -1,15 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useSelector,useDispatch} from "react-redux";
+import { arrowHandler } from "../redux/products";
 import exampleImg from "../assets/images/produkt.jpg";
 
 function ProductsElements() {
-  const { products, choosedProducts } = useSelector((state) => state.products);
+  const { products, choosedProducts, length,maxIndexOfProducts,numberOfVisibleElements } = useSelector(
+    (state) => state.products
+  );
+
   const { isUserLogged } = useSelector((state) => state.account);
+const dispatch = useDispatch()
 
   const productsElement = products.map((product) => {
     if (choosedProducts === product.name) {
-      const item = product.items.map((element) => {
+      const item = product.items.map((element, index) => {
+        if (index > maxIndexOfProducts) return;
+        if (index <= maxIndexOfProducts - numberOfVisibleElements) return;
         const { id, code, info, otherCategory, link } = element;
         const name =
           element.name.length < 27
@@ -17,23 +24,27 @@ function ProductsElements() {
             : element.name.slice(0, 27) + "...";
 
         const category = otherCategory.map((category) => {
-let color
-            switch (category) {
-                case "promocja":
-                    color="#fa182a";
-                    break;
-                    case "bestseller":
-                        color="#e31519";
-                        break;
-                        case "nowość":
-                            color="#80b61a";
-                            break;
-            
-                default:
-                    break;
-            }
+          let color;
+          switch (category) {
+            case "promocja":
+              color = "#fa182a";
+              break;
+            case "bestseller":
+              color = "#e31519";
+              break;
+            case "nowość":
+              color = "#80b61a";
+              break;
+
+            default:
+              break;
+          }
           return (
-            <span style={{backgroundColor:`${color}`}} key={category} className="products__element-category">
+            <span
+              style={{ backgroundColor: `${color}` }}
+              key={category}
+              className="products__element-category"
+            >
               {category}
             </span>
           );
@@ -42,15 +53,22 @@ let color
           return (
             <span className="products__element-text--infoLog">
               Po więcej informacji musisz się{" "}
-              <Link className="products__element-text--infoLogLink"to="/account">zalogować</Link>
+              <Link
+                className="products__element-text--infoLogLink"
+                to="/account"
+              >
+                zalogować
+              </Link>
             </span>
           );
         };
 
         return (
           <div className="products__element" key={id}>
-              <div className="products__element-category--container">{category}</div>
-            
+            <div className="products__element-category--container">
+              {category}
+            </div>
+
             <Link className="products__element-img--container" to={link}>
               <img src={exampleImg} alt="" className="products__element-img" />
             </Link>
@@ -84,7 +102,33 @@ let color
     }
   });
 
-  return <div className="products__container">{productsElement}</div>;
+  
+
+  return (
+    <div className="products__container">
+      {productsElement}
+      {length > maxIndexOfProducts && (
+        <div
+          onClick={() => {
+            dispatch(arrowHandler("right"));
+          }}
+          className="products__container-arrow--right products__container-arrow"
+        >
+          <i className="halmar-icon_30 products__arrow-icon"></i>
+        </div>
+      )}
+      {maxIndexOfProducts > numberOfVisibleElements && (
+        <div
+          onClick={() => {
+           dispatch(arrowHandler("left"));
+          }}
+          className="products__container-arrow--left products__container-arrow"
+        >
+          <i className="halmar-icon_30 products__arrow-icon"></i>
+        </div>
+      )}
+    </div>
+  );
 }
 
 export default ProductsElements;

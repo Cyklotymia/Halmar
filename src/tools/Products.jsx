@@ -7,12 +7,7 @@ function Products() {
     <section className="products">
       <div className="wrapper">
         <div className="products__nav">
-          <ProductsNavElement
-            onClick={() => {
-              console.log("object");
-            }}
-            name={"promocje"}
-          />
+          <ProductsNavElement name={"promocje"}/>
           <ProductsNavElement name={"nowości"} />
           <ProductsNavElement name={"wyprzedaż"} />
         </div>
