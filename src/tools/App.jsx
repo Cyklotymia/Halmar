@@ -5,9 +5,9 @@ import "../assets/scss/main.scss";
 import Account from "./Account";
 import Banners from "./Banners";
 import Header from "./Header";
+import Inspirations from "./Inspirations";
 import MainSlider from "./MainSlider";
 import Products from "./Products";
-// import Test from "./Test";
 import ProductSlider from "./sliders/ProductSlider";
 
 
@@ -30,6 +30,7 @@ const App = () => {
               <ProductSlider data={productSliderData}/>
               <Banners/>
               <Products/>
+              <Inspirations/>
           </Route>
       </Switch>
         </section>
