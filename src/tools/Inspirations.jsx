@@ -3,6 +3,7 @@ import InspirationsNav from './InspirationsNav';
 import InspirationsPhoto from './InspirationsPhoto';
 import InspirationsProducts from './InspirationsProducts';
 function Inspirations() {
+    
     return (  
         <section className="inspirations">
             <div className="wrapper">

@@ -12,8 +12,8 @@
 
   .inspirations__nav-link {
     display: none;
-    .inspirations__nav-icon {
-    }
+    // .inspirations__nav-icon {
+    // }
   }
 }
 
@@ -21,8 +21,38 @@
   width: 100%;
   position: relative;
   height: 80vw;
+  max-height: 600px;
   margin-bottom: 20px;
   overflow: hidden;
+  .insporations__photo-info {
+    position: absolute;
+    height: 50px;
+    cursor: pointer;
+    width: 50px;
+    background-color: rgba(255, 0, 0, 0.295);
+    transition: 0.5s;
+    display: none;
+    @include for-size(s) {
+      display: block;
+      @include flexParent(row, nowrap, center, center);
+    }
+  }
+  .insporations__photo-info::before {
+    content: "";
+    display: block;
+    background-color: $red-color;
+    width: 40%;
+    height: 40%;
+    transition: 0.5s;
+  }
+  .insporations__photo-info:hover::before {
+    width: 35%;
+    height: 35%;
+  }
+  .insporations__photo-info:hover {
+    height: 45px;
+    width: 45px;
+  }
   .inspirations__photo-img {
     position: absolute;
     top: 0;
@@ -36,36 +66,45 @@
   }
 
   .inspirations__photo-arrow {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background-color: rgba(255, 255, 255, 0.767);
-      color: black;
-      @include flexParent(row,nowrap,center,center);
-      width: 45px;
-      height: 45px;
-      cursor: pointer;
-      transition: .3s;
-      
-    .inspirations__photo-arrowIcon {
-      transition: .3s;
+      opacity: 0;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.767);
+    color: black;
+    @include flexParent(row, nowrap, center, center);
+    width: 45px;
+    height: 45px;
+    cursor: pointer;
+    transition: 0.3s;
 
+    .inspirations__photo-arrowIcon {
+      transition: 0.3s;
     }
   }
-  .inspirations__photo-arrow:hover{
-      background-color: $red-color;
-      color: white;
+  .inspirations__photo-arrow.active{
+      opacity: 1;
+  }
+  .inspirations__photo-arrow:hover {
+    background-color: $red-color;
+    color: white;
   }
   .inspirations__photo-arrow--right {
-      right: 0;
+    right: 0;
     .inspirations__photo-arrowIcon {
-        transform:rotate(-90deg);
+      transform: rotate(-90deg);
     }
   }
   .inspirations__photo-arrow--left {
-      left: 0;
+    left: 0;
     .inspirations__photo-arrowIcon {
-        transform:rotate(90deg);
+      transform: rotate(90deg);
     }
+  }
+}
+
+.inspirationsProducts {
+  @include for-size(s) {
+    display: none;
   }
 }
