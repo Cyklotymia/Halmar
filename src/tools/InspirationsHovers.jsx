@@ -20,7 +20,7 @@ function InspirationsHover({ location }) {
         className="insporations__photo-info"
       ></div>
       {
-        <div ref={hoverRef} style={{ top: `${top}%`, left: `${left}%`, animation: `${isHovered?"opacity 1s both":null}`,transform:"translate(-45%,-130%)" }} className={`hoveredItem ${isHovered ? "active" : "unActive"}`}>
+        <div ref={hoverRef} style={{ top: `${top}%`, left: `${left}%`, animation: `${isHovered?"opacity 1s both":null}`,transform:"translate(-46%,-130%)" }} className={`hoveredItem ${isHovered ? "active" : "unActive"}`}>
           <div className="hoveredItem__container">
 
           <div className="hoveredItem__img--container">

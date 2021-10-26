@@ -54,6 +54,20 @@
         padding-left: 7px;
         font-weight: $font-w-bold
     }
+    @include for-size(s){
+        font-size: 25px;
+        height: 35px;
+    }
+    @include for-size(xm){
+        font-size: 30px;
+        height: 40px;
+
+    }
+    @include for-size(l){
+        font-size: 35px;
+        height: 45px;
+
+    }
 }
 .halmar__header::before{
     content: "";

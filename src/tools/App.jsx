@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+
 import productSliderData from "../assets/data/productSlider";
 import "../assets/scss/main.scss";
 import Account from "./Account";
@@ -9,6 +10,7 @@ import Inspirations from "./Inspirations";
 import MainSlider from "./MainSlider";
 import Products from "./Products";
 import ProductSlider from "./sliders/ProductSlider";
+import StatsHalmar from "./StatsHalmar";
 
 
 
@@ -31,6 +33,7 @@ const App = () => {
               <Banners/>
               <Products/>
               <Inspirations/>
+              <StatsHalmar/>
           </Route>
       </Switch>
         </section>
