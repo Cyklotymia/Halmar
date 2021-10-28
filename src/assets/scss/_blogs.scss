@@ -1,11 +1,12 @@
 .blogs__nav{
+    padding-bottom: 50px;
     @include for-size(m){
         @include flexParent(row,nowrap,space-between,center);
     }
     
-    .blogs__nav-header{
+    // .blogs__nav-header{
 
-    }
+    // }
 
     .blogs__nav-container{
         padding-top: 15px;
