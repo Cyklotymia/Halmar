@@ -6,9 +6,10 @@ const useScroll = () => {
   const ref = useRef(null);
 
   const handleScrollInto = () => {
-
+   
 
     if (
+      ref.current &&
       window.scrollY >=
       ref.current.offsetTop -
         ref.current.offsetHeight -
@@ -29,6 +30,7 @@ const useScroll = () => {
       return () => {
         if (ref.current) {
           ref.current.removeEventListener("scroll", handleScrollInto);
+          
         }
       };
     }

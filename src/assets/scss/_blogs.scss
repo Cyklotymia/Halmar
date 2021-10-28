@@ -1,0 +1,39 @@
+.blogs__nav{
+    @include for-size(m){
+        @include flexParent(row,nowrap,space-between,center);
+    }
+    
+    .blogs__nav-header{
+
+    }
+
+    .blogs__nav-container{
+        padding-top: 15px;
+        @include flexParent(row,nowrap,center,center);
+        overflow: scroll;
+        .blogs__nav-element{
+            display: block;
+            background-color: $darker-gray-color;
+            text-transform: uppercase;
+            font-size: 10px;
+            min-width: 100px;
+            min-height: 25px;
+            @include flexParent(row,nowrap,center,center);
+            margin-right: 10px;
+            cursor: pointer;
+            transition: .3s;
+            @include for-size(m){
+               min-width: 110px;
+               min-height: 35px;
+               font-size: 12px;
+            }
+
+
+        }
+        .blogs__nav-element:last-child{min-width: 50px;}
+        .blogs__nav-element:hover{
+            background-color: $red-color;
+            color: white;
+        }
+    }
+}

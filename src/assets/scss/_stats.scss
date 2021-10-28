@@ -47,7 +47,7 @@
       
  
         @include for-size(xs){
-          max-width: 50%;
+          max-width: 48%;
         }
         @include for-size(s){
             height: 100%;
@@ -61,6 +61,8 @@
             margin: 20px 0 3vw 0;
             font-size: 30px;
             flex-wrap: wrap;
+            height:35px;
+            @include flexParent(column,wrap,flex-start,flex-start);
             @include for-size(xs){
                 font-size: 4vw;
             }
