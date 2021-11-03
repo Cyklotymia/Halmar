@@ -6,7 +6,7 @@ export const blogs = createSlice({
   initialState: {
     choosedBlogs: "wszystkie",
     blogs: blogsData,
-    length: blogsData[0].list.length +blogsData[1].list.length + blogsData[2].list.length,
+    length:  blogsData[3].list.length,
     maxIndexOfProducts:1,
     numberOfVisibleElements:2,
   },
@@ -14,14 +14,24 @@ export const blogs = createSlice({
     changeBlogs: (state, name) => {
       state.choosedBlogs = name.payload;
       switch (name.payload) {
-        case "wszystkie":
-          state.length = blogsData[0].list.length +blogsData[1].list.length + blogsData[2].list.length;
+        case "nowości":
+          state.length = blogsData[1].list.length;
+          console.log(state.length);
           break;
         case "aktualności":
-          state.length = blogsData[1].list.length;
+          state.length = blogsData[0].list.length;
+          console.log(state.length);
+
           break;
         case "porady":
           state.length = blogsData[2].list.length;
+          console.log(state.length);
+
+          break;
+          case "wszystkie":
+          state.length = blogsData[3].list.length;
+          console.log(state.length);
+
           break;
 
         default:
@@ -38,7 +48,7 @@ export const blogs = createSlice({
             
     },
     resetBlogs:(state)=>{
-        state.maxIndexOfProducts=4
+        state.maxIndexOfProducts=1
     }
   },
 });

@@ -9,6 +9,7 @@ const dispatch = useDispatch()
 const  {choosedProducts}= useSelector(state => state.products)
 
 
+
 const navProductsHandler=()=>{
   dispatch(changeProduct(name))
 }

@@ -19,3 +19,5 @@ const pinsSlider = {
 };
 
 export default pinsSlider;
+
+

@@ -10,8 +10,8 @@
 
     .blogs__nav-container{
         padding-top: 15px;
-        @include flexParent(row,nowrap,center,center);
-        overflow: scroll;
+        @include flexParent(row,nowrap,flex-start,center);
+        overflow-x: scroll;
         .blogs__nav-element{
             display: block;
             background-color: $darker-gray-color;
@@ -36,5 +36,91 @@
             background-color: $red-color;
             color: white;
         }
+
+        .blogs__nav-element.active{
+            background-color: $red-color;
+            color: white;
+        }
     }
 }
+
+
+.blogs__container{
+    width: 100%;
+    position: relative;
+    .blogs__element{
+        width: 100%;
+        margin-bottom: 20px;
+        .blogs__element-img{
+            max-width: 100%;
+            display: block;
+        }
+        .blogs__element-info{
+            width: 100%;
+            border: 1px solid $border-color;
+            @include flexParent(column,nowrap,flex-start,flex-start);
+            padding: 20px;
+            .blogs__element-date{
+                font-size: 12px;
+                margin: 20px 0;
+            }
+            .blogs__element-header{
+                font-size: 14px;
+            }
+            .blogs__element-link{
+                border: 1px solid $border-color;
+                padding: 8px 15px;
+                font-size: 14px;
+                color:$text-color;
+                margin: 10px 0 40px;
+            }
+            .blogs__element-button{
+                background-color: $darker-gray-color;
+                color: black;
+                width: 80%;
+                @include flexParent(row,nowrap,center,center);
+            }
+            .blogs__element-button:hover{
+                background-color: $red-color;
+                color: white;
+            }
+        }
+    }
+}
+
+
+.blogs__container-arrow {
+    position: absolute;
+    background-color: $gray-color;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    width: 40px;
+    height: 40px;
+    color: black;
+    cursor: pointer;
+    transition: .3s;
+    @include flexParent(row,nowrap,center,center);
+    display: none;
+    @include for-size(xm){
+      display: block;
+      @include flexParent(row,nowrap,center,center);
+    }
+    
+  }
+  .blogs__container-arrow:hover{
+    background-color: rgb(216, 216, 216);
+  }
+  .blogs__container-arrow--right {
+    right: 0;
+    .blogs__arrow-icon {
+      transform: rotate(-90deg);
+    }
+  }
+
+  .blogs__container-arrow--left {
+    left: 0;
+    transform: translateY(-50%);
+    .blogs__arrow-icon {
+      transform: rotate(90deg);
+    }
+  }
