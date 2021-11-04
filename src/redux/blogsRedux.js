@@ -16,7 +16,7 @@ export const blogs = createSlice({
       switch (name.payload) {
         case "nowości":
           state.length = blogsData[1].list.length;
-          console.log(state.length);
+         
           break;
         case "aktualności":
           state.length = blogsData[0].list.length;

@@ -39,10 +39,12 @@ const blogsElement=blogs.map(blogs=>{
     return
   }
 })
+console.log(length , maxIndexOfProducts);
     return (
         <div className="blogs__container">
           {blogsElement}
-          {length > maxIndexOfProducts && (
+          {!length && <div className="empty">Nie znaleziono produktów dla szukanej flagi.</div>}
+          {length >= maxIndexOfProducts +numberOfVisibleElements && (
         <div
           onClick={() => {
             dispatch(arrowHandler("right"));
@@ -52,7 +54,7 @@ const blogsElement=blogs.map(blogs=>{
           <i className="halmar-icon_30 blogs__arrow-icon"></i>
         </div>
       )}
-      {maxIndexOfProducts > numberOfVisibleElements && (
+      {maxIndexOfProducts >= numberOfVisibleElements && (
         <div
           onClick={() => {
            dispatch(arrowHandler("left"));
@@ -64,6 +66,7 @@ const blogsElement=blogs.map(blogs=>{
       )}
         </div>
       );
+      
 }
 
 export default BlogsElements;
