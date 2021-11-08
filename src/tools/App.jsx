@@ -6,6 +6,7 @@ import "../assets/scss/main.scss";
 import Account from "./Account";
 import Banners from "./Banners";
 import Blogs from "./Blogs";
+import Footer from "./Footer";
 import Header from "./Header";
 import Inspirations from "./Inspirations";
 import MainSlider from "./MainSlider";
@@ -41,7 +42,9 @@ const App = () => {
           </Route>
       </Switch>
         </section>
-        
+        <footer className="footer">
+        <Footer/>
+        </footer>
     </Router>
   );
 };
