@@ -9,6 +9,7 @@ import Blogs from "./Blogs";
 import Header from "./Header";
 import Inspirations from "./Inspirations";
 import MainSlider from "./MainSlider";
+import Newsletter from "./Newsletter";
 import Products from "./Products";
 import ProductSlider from "./sliders/ProductSlider";
 import StatsHalmar from "./StatsHalmar";
@@ -36,6 +37,7 @@ const App = () => {
               <Inspirations/>
               <StatsHalmar/>
               <Blogs/>
+              <Newsletter/>
           </Route>
       </Switch>
         </section>

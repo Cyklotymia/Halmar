@@ -62,3 +62,18 @@ padding-top: 20px;
   padding: 20px;
   background-color: white;
 }
+
+.newsletter{
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  height: 300px;
+  @include flexParent(row,nowrap,center,center);
+  @include for-size(xs){
+    height: 250px;
+  }
+  @include for-size(s){
+    height: 150px;
+    }
+  
+}

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 function InspirationsNav() {
   return (
     <div className="inspirations__nav">
-      <Link to="/inspirations"className=" halmar__header inspirations__nav-header">
+      <Link to="/inspirations" className=" halmar__header inspirations__nav-header">
         zobacz nasze{" "}
         <span className="halmar__header--bold inspirations__nav-header--bold">inspiracje</span>
       </Link>

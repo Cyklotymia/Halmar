@@ -1,0 +1,189 @@
+.newsletter__mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: black;
+  height: 100%;
+  z-index: 2;
+  opacity: 0.2;
+}
+
+.newsletter__background {
+  width: auto;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 100%;
+  z-index: 1;
+  @include for-size(xm) {
+    min-width: 100%;
+    height: auto;
+  }
+}
+.newsletter__content {
+  position: relative;
+  z-index: 3;
+  padding: 30px 0;
+
+  @include flexParent(column, nowrap, flex-start, flex-start);
+  @include for-size(s) {
+    @include flexParent(row, nowrap, center, center);
+  }
+  @include for-size(xm) {
+    @include flexParent(row, nowrap, space-evenly, center);
+  }
+  .newsletter__header--container {
+    @include flexParent(row, nowrap, flex-start, flex-start);
+
+    .newsletter__icon--container {
+      @include flexParent(row, nowrap, center, flex-start);
+      height: 50px;
+      margin-right: 20px;
+      @include for-size(xm){
+        height: 80px;
+        @include flexParent(row, nowrap, center, center);
+      }
+
+      .newsletter__icon {
+        color: $red-color;
+        font-size: 40px;
+        margin-right: 20px;
+      }
+    }
+    .newsletter__icon--container::after {
+      background-color: $border-color;
+      min-height: 100%;
+      width: 1px;
+      content: "";
+      display: block;
+    }
+    .newsletter__header {
+      @include flexParent(column, nowrap, flex-start, flex-start);
+      color: white;
+      @include for-size(s) {
+        font-size: 20px;
+      }
+      @include for-size(xm){
+        
+        font-size: 30px;
+      }
+      .newsletter__header--bold {
+        padding: 0;
+      }
+    }
+  }
+
+  .newsletter__form {
+    padding: 20px 0;
+    @include flexParent(column, nowrap, center, center);
+    @include for-size(xs) {
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+    @include for-size(s) {
+      width: 50%;
+      margin-left: 20px;
+      padding: 0;
+      width: 60%;
+    }
+    @include for-size(xm) {
+      width: 50%;
+    }
+    .newsletter__input {
+      box-sizing: border-box;
+      background-color: white;
+      width: 100%;
+      margin-bottom: 15px;
+      height: 50px;
+      padding: 0 20px;
+      @include for-size(xs) {
+        width: 70%;
+        margin: 0;
+        height: 45px;
+      }
+      @include for-size(s) {
+        height: 40px;
+      }
+    }
+    .newsletter__button {
+      width: 100%;
+      @include for-size(xs) {
+        width: 30%;
+        height: 45px;
+      }
+      @include for-size(s) {
+        height: 40px;
+        @include flexParent(row, nowrap, center, center);
+        margin: 0;
+        padding: 0;
+      }
+    }
+    .newsletter__agreement {
+      margin-top: 20px;
+      @include flexParent(row, nowrap, flex-start, flex-start);
+      @include for-size(s) {
+        margin-top: 10px;
+      }
+      .newsletter__agreement--input {
+        box-sizing: border-box;
+        width: 20px;
+        height: 20px;
+        background-color: white;
+        margin-right: 10px;
+        transition: background-color 0.3s;
+        border: white 2px solid;
+        @include for-size(s) {
+          width: 15px;
+          height: 15px;
+        }
+      }
+      .newsletter__agreement--input:checked {
+        background-color: red;
+      }
+      .newsletter__agreement--text {
+        color: white;
+        max-width: 90%;
+        font-size: 11px;
+        @include for-size(s) {
+          font-size: 10px;
+        }
+      }
+    }
+  }
+
+  .newsletter__icons--container {
+    display: none;
+    @include for-size(xm) {
+      display: block;
+      height: 100%;
+      width: 20%;
+      @include flexParent(row, nowrap, center, center);
+    }
+    .newletter__icon--conatainer {
+      border: 1px white solid;
+      height: 40px;
+      width: 40px;
+      @include flexParent(row, nowrap, center, center);
+      margin: 0 5px;
+      transition: .3s;
+
+      .newletter__icon {
+        color: white;
+        font-size: 20px;
+      }
+    }
+    .newletter__icon--conatainer:hover{
+        background-color: $red-color;
+        border-color: transparent;
+    }
+  }
+  .newsletter__icons--container::before {
+    height: 80px;
+    content: "";
+    width: 1px;
+    background-color: white;
+    margin-right: 20px;
+  }
+}
