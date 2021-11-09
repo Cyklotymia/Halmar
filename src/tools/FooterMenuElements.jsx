@@ -20,6 +20,7 @@ function FooterMenuElements() {
       <div className="footer__menu-element">
         <div className="footer__menu-element--header">
           {footerElement.header}
+          <i className="halmar-icon_30 footer__menu-element--icon"></i>
         </div>
         <div className="footer__menu-element--links">{footerLinks}</div>
       </div>

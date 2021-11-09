@@ -1,0 +1,78 @@
+.footer__content{
+   
+    .footer__menu{
+        .footer__menu-content{
+            .footer__menu-element{
+                // .footer__menu-element--header{
+                //     .footer__menu-element--icon{}
+                // }
+              .footer__menu-element--links{
+                  display: none;
+                  .footer__menu-element--link{}
+              }  
+              .footer__menu-element--links.active{
+                  display: block;
+              }
+            }
+
+        }
+    }
+    .footer__contact{
+        // .footer__menu-element--header{}
+        .footer__contact-content{
+            display: none;
+            .footer__contact-icon--container{
+                .footer__contact-icon{}
+            }
+            .footer__contact-info{
+
+                .footer__contact-info--number{}
+                .footer__contact-info--text{}
+                .footer__conatct-info--button{}
+            }
+        }
+        .footer__contact-content.active{
+            display: block;
+        }
+    }
+    .footer__icons--container{
+        margin-top: 20px;
+        @include flexParent(row,nowrap,center,center);
+        .footer__icon--conatainer{
+            @include flexParent(row,nowrap,center,center);
+            border: 1px solid white;
+            height: 35px;
+            width: 35px;
+            margin: 0 5px;
+            transition: .3s;
+            .footer__icon{
+
+                color: white;
+            }
+        }
+        .footer__icon--conatainer:hover{
+            background-color: $red-color;
+            border: 1px solid transparent;
+        }
+    }
+}
+
+
+.footer__menu-element--header{
+    width: 100%;
+    cursor: pointer;
+    font-size: 14px;
+    border-bottom: 1px #6e6f71 solid;
+    height: 50px;
+    @include flexParent(row,nowrap,space-between,center);
+    text-transform: uppercase;
+    .footer__menu-element--icon{
+        margin-right:10px;
+    font-size: 10px;
+
+    }
+}
+
+.footer__menu-element--header--last{
+    border: none;
+}
