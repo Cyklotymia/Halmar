@@ -55,6 +55,15 @@ function Footer() {
             </Link>
         </div>
       </div>
+      <div className="footer__copyright">
+    <span className="footer__copyright-element">
+    Copyright 2021 Halmar.pl Wszystkie prawa zastrzeżone
+    </span>
+    <span className="footer__copyright-element">
+    Agencja interaktywna [ti] Powered by 
+  <Link to="/idk"className="footer__copyright-element--link">2ClickShop</Link>
+    </span>
+      </div>
     </div>
   );
 }
