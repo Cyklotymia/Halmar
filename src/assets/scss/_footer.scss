@@ -1,78 +1,266 @@
-.footer__content{
-   
-    .footer__menu{
-        .footer__menu-content{
-            .footer__menu-element{
-                // .footer__menu-element--header{
-                //     .footer__menu-element--icon{}
-                // }
-              .footer__menu-element--links{
-                  display: none;
-                  .footer__menu-element--link{}
-              }  
-              .footer__menu-element--links.active{
-                  display: block;
-              }
-            }
-
-        }
+.footer__content {
+  @include for-size(s) {
+    @include flexParent(row, wrap, flex-start, flex-start);
+  }
+  .footer__menu {
+    @include for-size(s) {
+      width: 70%;
     }
-    .footer__contact{
-        // .footer__menu-element--header{}
-        .footer__contact-content{
-            display: none;
-            .footer__contact-icon--container{
-                .footer__contact-icon{}
-            }
-            .footer__contact-info{
-
-                .footer__contact-info--number{}
-                .footer__contact-info--text{}
-                .footer__conatct-info--button{}
-            }
-        }
-        .footer__contact-content.active{
-            display: block;
-        }
+    @include for-size(xm) {
+      border-bottom: solid 1px #373839;
+      width: 60%;
     }
-    .footer__icons--container{
-        margin-top: 20px;
-        @include flexParent(row,nowrap,center,center);
-        .footer__icon--conatainer{
-            @include flexParent(row,nowrap,center,center);
-            border: 1px solid white;
-            height: 35px;
-            width: 35px;
-            margin: 0 5px;
-            transition: .3s;
-            .footer__icon{
+    @include for-size(m){
+      width: 70%
+     }
 
-                color: white;
+    .footer__menu-content {
+      @include for-size(s) {
+        @include flexParent(row, nowrap, space-evenly, flex-start);
+      }
+      @include for-size(xm) {
+        height: 280px;
+      }
+      @include for-size(m) {
+        height: 320px;
+      }
+
+      .footer__menu-element {
+        border-bottom: 1px #6e6f71 solid;
+        @include for-size(s) {
+          border: none;
+          margin-right: 30px;
+        }
+        .footer__menu-element--links {
+          height: 1px;
+          opacity: 0;
+
+          transition: 1s;
+          overflow: hidden;
+          @include for-size(s) {
+            height: auto;
+            opacity: 1;
+          }
+          .footer__menu-element--link {
+            color: #c2c3c3;
+            width: 100%;
+            height: 50px;
+            @include flexParent(column, nowrap, center, flex-start);
+            font-size: 14px;
+            transition: 0.3s;
+            @include for-size(s) {
+              font-size: 10px;
+              height: 30px;
             }
+            @include for-size(m){
+              font-size: 13px;
+              height: 40px;
+             }
+          }
+          .footer__menu-element--link:hover {
+            color: $red-color;
+          }
         }
-        .footer__icon--conatainer:hover{
-            background-color: $red-color;
-            border: 1px solid transparent;
+      }
+      .footer__menu-element.active {
+        .footer__menu-element--icon {
+          transform: rotate(-180deg);
         }
+
+        .footer__menu-element--links {
+          height: auto;
+          opacity: 1;
+
+          @include flexParent(column, nowrap, flex-start, flex-start);
+        }
+      }
     }
-}
-
-
-.footer__menu-element--header{
-    width: 100%;
-    cursor: pointer;
-    font-size: 14px;
+  }
+  .footer__contact {
     border-bottom: 1px #6e6f71 solid;
-    height: 50px;
-    @include flexParent(row,nowrap,space-between,center);
-    text-transform: uppercase;
-    .footer__menu-element--icon{
-        margin-right:10px;
-    font-size: 10px;
-
+    position: relative;
+    @include for-size(s) {
+      border: none;
+      width: 28%;
     }
+    @include for-size(xm) {
+      background-color: #1c1d1d;
+      padding-left: 20px;
+      height: 281px;
+
+      margin-left: 5px;
+      width: 35%;
+    }
+    @include for-size(m){
+      width: 25%;
+      height: 321px;
+     }
+    .footer__contact-content {
+      height: 0px;
+      opacity: 0;
+      //   display: none;
+      transition: 1s;
+      overflow: hidden;
+
+      @include for-size(s) {
+        height: auto;
+        opacity: 1;
+
+        @include flexParent(row, nowrap, flex-start, flex-start);
+      }
+
+      .footer__contact-icon--container {
+        margin-right: 10px;
+        @include for-size(s) {
+          display: none;
+        }
+        @include for-size(xm) {
+          display: block;
+        }
+        .footer__contact-icon {
+          @include for-size(xm) {
+            width: 25px;
+          }
+          @include for-size(m) {
+            width: 30px;
+          }
+          @include for-size(l) {
+            width: 35px;
+          }
+         
+        }
+      }
+      .footer__contact-info {
+        @include flexParent(column, nowrap, flex-start, flex-start);
+        width: 100%;
+
+        .footer__contact-info--number {
+          font-size: 20px;
+          margin-bottom: 5px;
+          @include for-size(s) {
+            font-size: 17px;
+          }
+          @include for-size(xm){
+            font-size: 20px;
+          }
+          @include for-size(m){
+           font-size: 25px;
+          }
+        }
+        .footer__contact-info--text {
+          font-size: 12px;
+
+          //   text-transform: uppercase;
+          @include for-size(s) {
+            font-size: 9px;
+          }
+          @include for-size(xm){
+            font-size:10px;
+          }
+         
+          
+        }
+        .footer__contact-info--text:nth-child(2) {
+          text-transform: uppercase;
+        }
+        .footer__contact-info--text:nth-child(3) {
+          margin: 20px 0;
+        }
+        .footer__conatct-info--button {
+          margin: 20px 0 10px;
+          font-size: 10px;
+        }
+      }
+    }
+  }
+  .footer__contact::after {
+    @include for-size(xm) {
+      background-color: #1c1d1d;
+      content: "";
+      height: 100%;
+      width: 100px;
+      position: absolute;
+      top: 0;
+      right: -100px;
+    }
+  }
+  .footer__contact.active {
+    .footer__contact-content {
+      height: auto;
+      opacity: 1;
+
+      @include flexParent(row, nowrap, flex-start, flex-start);
+    }
+  }
+  .footer__icons--container {
+    margin-top: 20px;
+    @include flexParent(row, nowrap, center, center);
+    width: 100%;
+    @include for-size(xm){
+      display: none;
+    }
+    .footer__icon--conatainer {
+      @include flexParent(row, nowrap, center, center);
+      border: 1px solid white;
+      height: 35px;
+      width: 35px;
+      margin: 0 5px;
+      transition: 0.3s;
+      .footer__icon {
+        color: white;
+      }
+    }
+    .footer__icon--conatainer:hover {
+      background-color: $red-color;
+      border: 1px solid transparent;
+    }
+  }
 }
 
-.footer__menu-element--header--last{
-    border: none;
+.footer__menu-element--header {
+  width: 100%;
+  cursor: pointer;
+  font-size: 16px;
+font-weight: $font-w-bold;
+  height: 50px;
+  @include flexParent(row, nowrap, space-between, center);
+  text-transform: uppercase;
+  @include for-size(s) {
+    font-size: 11px;
+    @include flexParent(row, nowrap, flex-start, center);
+  }
+  @include for-size(xm){
+    padding-top: 10px;
+    font-size: 12px;
+  }
+  @include for-size(m){
+    font-size: 15px;
+    height: 65px;
+   }
+  .footer__menu-element--icon {
+    margin-right: 10px;
+    font-size: 10px;
+    transition: 0.5s;
+    @include for-size(s) {
+      display: none;
+    }
+  }
+}
+.footer__menu-element--header::before {
+  @include for-size(s) {
+    content: "";
+    height: 40%;
+    width: 2px;
+    background-color: red;
+    transform: translateX(-7px);
+  }
+}
+
+.footer__menu-element--header--last {
+  border: none;
+}
+.footer__contact.active {
+  .footer__menu-element--icon {
+    transform: rotate(-180deg);
+  }
 }

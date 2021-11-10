@@ -11,7 +11,9 @@ function Footer() {
           <FooterMenuElements />
         </div>
         <div className="footer__contact">
-          <div className="footer__menu-element--header footer__menu-element--header--last">masz pytanie <i className="halmar-icon_30 footer__menu-element--icon"></i></div>
+          <div onClick={(e)=>{
+            e.target.closest(".footer__contact").classList.toggle("active")
+          }}className="footer__menu-element--header footer__menu-element--header--last">masz pytanie <i className="halmar-icon_30 footer__menu-element--icon"></i></div>
           <div className="footer__contact-content">
             <div className="footer__contact-icon--container">
               <img src={imgSrc} alt="" className="footer__contact-icon" />

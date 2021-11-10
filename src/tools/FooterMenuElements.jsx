@@ -2,8 +2,10 @@ import React from "react";
 import footer from "../assets/data/footer";
 import { Link } from "react-router-dom";
 
+
 function FooterMenuElements() {
-  console.log(footer);
+
+ 
   const footerElements = footer.map((footerElement) => {
     const footerLinks = footerElement.links.map((link) => {
       return (
@@ -18,11 +20,13 @@ function FooterMenuElements() {
     });
     return (
       <div className="footer__menu-element">
-        <div className="footer__menu-element--header">
+        <div  onClick={(e)=>{
+            e.target.closest(".footer__menu-element").classList.toggle("active")
+          }} className="footer__menu-element--header">
           {footerElement.header}
           <i className="halmar-icon_30 footer__menu-element--icon"></i>
         </div>
-        <div className="footer__menu-element--links">{footerLinks}</div>
+        <div className={`footer__menu-element--links`}>{footerLinks}</div>
       </div>
     );
   });

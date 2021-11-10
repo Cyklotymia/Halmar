@@ -82,4 +82,8 @@ padding-top: 20px;
   background-color: #242526;
   padding: 10px 0;
   color: white;
+  @include for-size(xm){
+    padding-top: 0;
+    overflow: hidden;
+  }
 }
