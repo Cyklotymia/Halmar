@@ -34,7 +34,7 @@ const pins = pinsLocation.map((pin,index)=>{
   const sliderPhoto = data.map((slider) => {
     if (slider.id === indexOfSlider) {
       return (
-        <>
+        <div key={indexOfSlider}>
           <img
             key={imgs[indexOfSlider]}
             src={imgs[indexOfSlider]}
@@ -44,7 +44,7 @@ const pins = pinsLocation.map((pin,index)=>{
           />
           <div key={indexOfSlider} className="insporations__photo-pin"></div>
           {pins}
-        </>
+        </div>
       );
     }
   });

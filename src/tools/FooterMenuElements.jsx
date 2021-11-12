@@ -19,7 +19,7 @@ function FooterMenuElements() {
       );
     });
     return (
-      <div className="footer__menu-element">
+      <div key ={Math.random()} className="footer__menu-element">
         <div  onClick={(e)=>{
             e.target.closest(".footer__menu-element").classList.toggle("active")
           }} className="footer__menu-element--header">

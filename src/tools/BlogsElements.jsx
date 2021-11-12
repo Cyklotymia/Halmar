@@ -39,7 +39,6 @@ const blogsElement=blogs.map(blogs=>{
     return
   }
 })
-console.log(length , maxIndexOfProducts);
     return (
         <div className="blogs__container">
           {blogsElement}
