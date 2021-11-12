@@ -258,6 +258,12 @@ padding: 20px 0;
             color: black;
           }
         }
+        .products__element-fav.active{
+          background-color: black;
+           .products__element-fav--icon {
+             color: white;
+           }
+        }
       }
     }
   }

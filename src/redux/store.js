@@ -7,6 +7,7 @@ import productSliderRedux from "./productSliderRedux";
 import products from "./products";
 import pinsSliderData from "./pinsSliderData";
 import blogsRedux from "./blogsRedux";
+import storeAcc from "./storeAcc";
 
 export default configureStore({
     reducer:{
@@ -18,5 +19,6 @@ export default configureStore({
         products,
         pinsSliderData,
         blogsRedux,
+        storeAcc,
     }
 })
