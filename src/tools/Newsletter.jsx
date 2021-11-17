@@ -41,15 +41,15 @@ function Newsletter() {
             </div>
         </form>
         <div className="newsletter__icons--container">
-            <Link to="idk" className="newletter__icon--conatainer">
+            <a href="https://www.facebook.com/" className="newletter__icon--conatainer">
                 <i className="newletter__icon halmar-icon_24"></i>
-            </Link>
-            <Link to="idk" className="newletter__icon--conatainer">
+            </a>
+            <a href="https://www.instagram.com/"  className="newletter__icon--conatainer">
                 <i className="newletter__icon halmar-icon_25"></i>
-            </Link>
-            <Link to=" idk" className="newletter__icon--conatainer">
+            </a>
+            <a href="https://www.pinterest.com/" className="newletter__icon--conatainer">
                 <i className="newletter__icon halmar-icon_26"></i>
-            </Link>
+            </a>
         </div>
         </div>
       </div>

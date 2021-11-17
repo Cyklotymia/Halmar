@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { useSelector,useDispatch} from "react-redux";
 import { arrowHandler } from "../redux/products";
 import exampleImg from "../assets/images/produkt.jpg";
-import { addProduct } from "../redux/storeAcc";
+import { addProduct,removeProduct } from "../redux/storeAcc";
 
 function ProductsElements() {
   const { products, choosedProducts, length,maxIndexOfProducts,numberOfVisibleElements } = useSelector(
@@ -91,7 +91,14 @@ const dispatch = useDispatch()
                 </Link>
                 <Link onClick={(e)=>{
                   e.target.closest(".products__element-fav").classList.toggle("active")
-                  dispatch(addProduct(code))
+                  const isActive=e.target.closest(".products__element-fav").classList.contains("active")
+                  if (isActive) {
+                    dispatch(addProduct(code))
+                    
+                  }else{
+                    dispatch(removeProduct(code))
+                  }
+                 
                 }} to={"/"} className="products__element-fav">
                   <i className="halmar-icon_03 products__element-fav--icon"></i>
                 </Link>

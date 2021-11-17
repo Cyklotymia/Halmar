@@ -136,11 +136,17 @@
                 @include for-size(s){
                     font-size: 2.6vw;
                 }
+                @include for-size(l){
+                    font-size: 40px;
+                }
             }
             .stats__element-text{
                 font-size: 15px;
                 @include for-size(s){
                     font-size: 1.3vw;
+                }
+                @include for-size(l){
+                    font-size: 18px;
                 }
                 
             }
