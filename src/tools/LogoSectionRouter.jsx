@@ -6,7 +6,7 @@ function LogoSectionRouter() {
  
     const { isUserLogged } = useSelector((state) => state.account);
     const { numberOfProducts } = useSelector((state) => state.storeAcc);
-    console.log(numberOfProducts);
+    
 
   return (
     <div className="logoSection__account">

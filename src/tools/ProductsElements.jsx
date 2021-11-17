@@ -1,17 +1,23 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { useSelector,useDispatch} from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { arrowHandler } from "../redux/products";
 import exampleImg from "../assets/images/produkt.jpg";
-import { addProduct,removeProduct } from "../redux/storeAcc";
+import { addProduct, removeProduct } from "../redux/storeAcc";
 
 function ProductsElements() {
-  const { products, choosedProducts, length,maxIndexOfProducts,numberOfVisibleElements } = useSelector(
-    (state) => state.products
-  );
+  const {
+    products,
+    choosedProducts,
+    length,
+    maxIndexOfProducts,
+    numberOfVisibleElements,
+  } = useSelector((state) => state.products);
 
   const { isUserLogged } = useSelector((state) => state.account);
-const dispatch = useDispatch()
+  const { choosedFavProducts } = useSelector((state) => state.storeAcc);
+
+  const dispatch = useDispatch();
 
   const productsElement = products.map((product) => {
     if (choosedProducts === product.name) {
@@ -23,6 +29,13 @@ const dispatch = useDispatch()
           element.name.length < 27
             ? element.name
             : element.name.slice(0, 27) + "...";
+
+        let intrested = element.intrested;
+        choosedFavProducts.forEach((product) => {
+          if (product === code) return (intrested = true);
+        
+        });
+        console.log(intrested);
 
         const category = otherCategory.map((category) => {
           let color;
@@ -89,17 +102,35 @@ const dispatch = useDispatch()
                 >
                   więcej
                 </Link>
-                <Link onClick={(e)=>{
-                  e.target.closest(".products__element-fav").classList.toggle("active")
-                  const isActive=e.target.closest(".products__element-fav").classList.contains("active")
-                  if (isActive) {
-                    dispatch(addProduct(code))
-                    
-                  }else{
-                    dispatch(removeProduct(code))
-                  }
-                 
-                }} to={"/"} className="products__element-fav">
+                <Link
+                  onClick={(e) => {
+                    if (!choosedFavProducts.length) {
+                      intrested = true;
+                    } else {
+                      choosedFavProducts.forEach((product) => {
+                        if (product === code) return (intrested = false);
+                        return (intrested = true);
+                      });
+                    }
+                    console.log(intrested);
+
+                    e.target
+                      .closest(".products__element-fav")
+                      .classList.toggle("active");
+                    const isActive = e.target
+                      .closest(".products__element-fav")
+                      .classList.contains("active");
+                    if (isActive) {
+                      dispatch(addProduct(code));
+                    } else {
+                      dispatch(removeProduct(code));
+                    }
+                  }}
+                  to={"/"}
+                  className={`products__element-fav ${
+                    intrested ? "active" : "unActive"
+                  }`}
+                >
                   <i className="halmar-icon_03 products__element-fav--icon"></i>
                 </Link>
               </div>
@@ -112,8 +143,6 @@ const dispatch = useDispatch()
       return;
     }
   });
-
-  
 
   return (
     <div className="products__container">
@@ -131,7 +160,7 @@ const dispatch = useDispatch()
       {maxIndexOfProducts > numberOfVisibleElements && (
         <div
           onClick={() => {
-           dispatch(arrowHandler("left"));
+            dispatch(arrowHandler("left"));
           }}
           className="products__container-arrow--left products__container-arrow"
         >
