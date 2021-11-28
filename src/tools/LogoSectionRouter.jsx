@@ -25,7 +25,7 @@ function LogoSectionRouter() {
       </Link>
       {isUserLogged&&
       <Link to="/basket" className="logoSection__element logoSection__element--basket  halmar__number-relative">
-        <span className=" logoSection__element--number halmar__number">{numberOfProducts}</span>
+        <span className=" logoSection__element--number halmar__number">{0}</span>
         <i className="halmar-icon_05 logoSection__element-icon"></i>
         <span className="logoSection__element-text">KOSZYK</span>
       </Link>}

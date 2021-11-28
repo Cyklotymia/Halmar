@@ -1,0 +1,94 @@
+.store__header {
+}
+.store__content {
+  margin-top: 20px;
+  .store__fav {
+    .store__fav-item {
+      border: 1px solid $border-color;
+      margin: 10px 0;
+      padding: 10px;
+      @include flexParent(row, nowrap, flex-start, center);
+      height: 150px;
+      background-color: white;
+      max-width: 800px;
+      .store__fav-item-img {
+        max-width: 30%;
+        margin-left: 10px;
+        max-height: 100%;
+      }
+      .store__fav-item--content {
+        padding-left: 10px;
+        height: 100%;
+        @include flexParent(column, nowrap, space-between, flex-start);
+        border-left: 1px solid $border-color;
+        margin-left: 10px;
+        width: 100%;
+        .store__fav-item--info {
+          .store__fav-item--header {
+            font-size: 12px;
+            margin-bottom: 10px;
+            display: block;
+            color: $text-color;
+            font-weight: $font-w-bold;
+          }
+          .store__fav-item--price {
+          }
+        }
+        .store__fav-item--buttons {
+          width: 100%;
+          @include flexParent(row, wrap, flex-end, center);
+
+          .store__fav-item--delate {
+            height: 30px;
+            background-color: $red-color;
+            color: white;
+            width: 30px;
+            position: relative;
+            margin-left: 10px;
+            cursor: pointer;
+            transition: 0.3s;
+            .store__fav-item--delateElement {
+              display: block;
+              background-color: white;
+              height: 2px;
+              width: 50%;
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transition: .3s;
+            }
+            .store__fav-item--delateElement:first-child {
+              transform: translate(-50%, -50%) rotate(-45deg);
+            }
+            .store__fav-item--delateElement:last-child {
+              transform: translate(-50%, -50%) rotate(45deg);
+            }
+          }
+          .store__fav-item--basket {
+            height: 30px;
+            background-color: $red-color;
+            color: white;
+            width: 30px;
+            @include flexParent(row, nowrap, center, center);
+            cursor: pointer;
+            transition: 0.3s;
+
+            .store__fav-item--basketIcon {
+                font-size: 15px;
+                transition: .3s;
+            }
+          }
+          .store__fav-item--link:hover,
+          .store__fav-item--basket:hover,
+          .store__fav-item--delate:hover {
+            background-color: $red-darker-color;
+            .store__fav-item--delateElement{
+                width: 70%;
+            }
+            
+          }
+        }
+      }
+    }
+  }
+}

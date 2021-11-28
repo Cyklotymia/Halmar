@@ -35,7 +35,7 @@ function ProductsElements() {
           if (product === code) return (intrested = true);
         
         });
-        console.log(intrested);
+       
 
         const category = otherCategory.map((category) => {
           let color;

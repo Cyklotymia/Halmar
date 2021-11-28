@@ -2,7 +2,7 @@ import React, { Children } from "react";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
-import products from "../assets/data/products2";
+import allProducts from "../assets/data/products2";
 import exampleImg from "../assets/images/produkt.jpg";
 
 function InspirationsProducts() {
@@ -13,7 +13,8 @@ function InspirationsProducts() {
 
   const items = pins.map((pin) => {
     if (pin.code) {
-      const productsToShow = products.filter((product) => {
+      const productsToShow = allProducts.filter((product) => {
+        
         if (parseInt(product.code) === pin.code) {
           return product;
         }

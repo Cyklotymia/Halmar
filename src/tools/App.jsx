@@ -14,6 +14,7 @@ import Newsletter from "./Newsletter";
 import Products from "./Products";
 import ProductSlider from "./sliders/ProductSlider";
 import StatsHalmar from "./StatsHalmar";
+import Store from "./Store";
 
 
 
@@ -39,6 +40,11 @@ const App = () => {
               <StatsHalmar/>
               <Blogs/>
               <Newsletter/>
+          </Route>
+      </Switch>
+      <Switch>
+      <Route exact path="/closet">
+              <Store/>
           </Route>
       </Switch>
         </section>
