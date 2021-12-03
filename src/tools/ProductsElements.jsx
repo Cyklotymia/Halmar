@@ -111,9 +111,7 @@ function ProductsElements() {
                         if (product === code) return (intrested = false);
                         return (intrested = true);
                       });
-                    }
-                    console.log(intrested);
-
+                    }                
                     e.target
                       .closest(".products__element-fav")
                       .classList.toggle("active");

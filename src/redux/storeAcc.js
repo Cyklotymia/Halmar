@@ -14,6 +14,7 @@ export const storeAcc = createSlice({
       state.numberOfProducts = state.choosedFavProducts.length;
     },
     removeProduct: (state, name) => {
+     
       state.choosedFavProducts = state.choosedFavProducts.filter((code) => {
         return code !== name.payload;
       });

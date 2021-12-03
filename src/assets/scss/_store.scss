@@ -1,5 +1,5 @@
-.store__header {
-}
+// .store__header {
+// }
 .store__content {
   margin-top: 20px;
   .store__fav {
@@ -15,6 +15,7 @@
         max-width: 30%;
         margin-left: 10px;
         max-height: 100%;
+        
       }
       .store__fav-item--content {
         padding-left: 10px;
@@ -31,8 +32,8 @@
             color: $text-color;
             font-weight: $font-w-bold;
           }
-          .store__fav-item--price {
-          }
+        //   .store__fav-item--price {
+        //   }
         }
         .store__fav-item--buttons {
           width: 100%;
@@ -68,7 +69,8 @@
             height: 30px;
             background-color: $red-color;
             color: white;
-            width: 30px;
+            // width: 30px;
+            padding: 0 5px;
             @include flexParent(row, nowrap, center, center);
             cursor: pointer;
             transition: 0.3s;
@@ -76,6 +78,7 @@
             .store__fav-item--basketIcon {
                 font-size: 15px;
                 transition: .3s;
+                padding-right: 5px;
             }
           }
           .store__fav-item--link:hover,
