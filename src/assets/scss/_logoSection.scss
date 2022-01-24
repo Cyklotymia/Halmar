@@ -166,8 +166,10 @@
         font-size: 8px;
         margin-top: 5px;
         font-weight: $font-w-medium;
+        
         @include for-size(m){
           font-size: 10px;
+          white-space: nowrap;
         }
       }
 

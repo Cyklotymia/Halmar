@@ -3,7 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 export const basketAcc = createSlice({
   name: "basketAcc",
   initialState: {
-    numberOfProducts: 0,
+    numberOfBasketProducts: 0,
     basketProducts: [],
   },
   reducers: {
@@ -11,7 +11,7 @@ export const basketAcc = createSlice({
       state.basketProducts = [...state.basketProducts, name.payload];
       state.basketProducts = Array.from(new Set(state.basketProducts));
 
-      state.numberOfProducts = state.basketProducts.length;
+      state.numberOfBasketProducts = state.basketProducts.length;
     },
     
   },

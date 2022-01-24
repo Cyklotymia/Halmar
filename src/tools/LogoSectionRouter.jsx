@@ -3,6 +3,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 import BasketNav from "./BasketNav";
 function LogoSectionRouter() {
+  const { basketProducts,numberOfBasketProducts } = useSelector((state) => state.basketAcc);
  
     const { isUserLogged } = useSelector((state) => state.account);
     const { numberOfProducts } = useSelector((state) => state.storeAcc);
@@ -25,7 +26,7 @@ function LogoSectionRouter() {
       </Link>
       {isUserLogged&&
       <Link to="/basket" className="logoSection__element logoSection__element--basket  halmar__number-relative">
-        <span className=" logoSection__element--number halmar__number">{0}</span>
+        <span className=" logoSection__element--number halmar__number">{numberOfBasketProducts}</span>
         <i className="halmar-icon_05 logoSection__element-icon"></i>
         <span className="logoSection__element-text">KOSZYK</span>
       </Link>}

@@ -15,7 +15,7 @@ function StoreElement() {
     (state) => state.storeAcc
   );
   const { basketProducts } = useSelector((state) => state.basketAcc);
-  console.log(basketProducts);
+  
 
   const generateElements = choosedFavProducts.map((code) => {
     const favItem = items.map((intrestedItem) => {

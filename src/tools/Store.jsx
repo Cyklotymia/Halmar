@@ -1,15 +1,12 @@
 import React from 'react'
-// import { useDispatch, useSelector } from "react-redux";
-// import { removeProduct } from "../redux/storeAcc";
+
 import StoreElements from './StoreElements';
 
 
 
 
 function Store() {
-    // const dispatch = useDispatch();
-    // const { numberOfProducts,choosedFavProducts } = useSelector((state) => state.storeAcc)
-    // console.log(numberOfProducts,choosedFavProducts);
+  
     return ( 
         <section className="store">
             <div className="wrapper">
